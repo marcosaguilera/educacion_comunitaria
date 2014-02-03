@@ -1,0 +1,37 @@
+#main_costosDojoGrid{
+    cursor: pointer;    
+}
+
+#main_educomDojoGrid{
+    cursor: pointer;    
+}
+
+#main_inscripciones_list_personas{
+    cursor: pointer;    
+}
+
+#main_inscpersonaeducomDojoGrid{
+    cursor: pointer;    
+}
+
+#main_comunity_search{
+    top: 8px !important;
+}
+
+#main_breadcrumbLayers1_decorator_button1 {
+    background-color: #EEB422;
+    color: #fff;
+    border: 0px !important;
+}
+
+#main_breadcrumbLayers1_decorator_button2 {
+    background-color: #BE2625;
+    color: #fff;
+    border: 0px !important;
+}
+
+#main_breadcrumbLayers1_decorator_button3 {
+    background-color: #60AFFE;
+    color: #fff;
+    border: 0px !important;
+}
