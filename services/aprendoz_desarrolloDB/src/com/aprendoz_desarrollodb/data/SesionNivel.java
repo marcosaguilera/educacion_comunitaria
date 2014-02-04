@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.SesionNivel
- *  01/30/2014 12:34:14
+ *  02/04/2014 12:37:42
  * 
  */
 public class SesionNivel {

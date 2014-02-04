@@ -1,19 +1,20 @@
 
 package com.aprendoz_desarrollodb.data;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 
 /**
  *  aprendoz_desarrolloDB.InscAlumCosto
- *  01/30/2014 12:34:15
+ *  02/04/2014 12:37:43
  * 
  */
 public class InscAlumCosto {
 
     private Integer idInscAlumCosto;
     private Boolean inscrito;
-    private Integer descuentoPorcentaje;
+    private BigDecimal descuentoPorcentaje;
     private Double descuentoValor;
     private Double valorFinalDescuento;
     private Date fechaInicio;
@@ -39,11 +40,11 @@ public class InscAlumCosto {
         this.inscrito = inscrito;
     }
 
-    public Integer getDescuentoPorcentaje() {
+    public BigDecimal getDescuentoPorcentaje() {
         return descuentoPorcentaje;
     }
 
-    public void setDescuentoPorcentaje(Integer descuentoPorcentaje) {
+    public void setDescuentoPorcentaje(BigDecimal descuentoPorcentaje) {
         this.descuentoPorcentaje = descuentoPorcentaje;
     }
 

@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.InscPersonaEduCom
- *  01/30/2014 12:34:15
+ *  02/04/2014 12:37:43
  * 
  */
 public class InscPersonaEduCom {
@@ -16,6 +16,7 @@ public class InscPersonaEduCom {
     private Date fechaActualizacion;
     private Double descuento;
     private Boolean tomaTransporte;
+    private String plazo;
     private Educom educom;
     private TipoPago tipoPago;
     private Persona persona;
@@ -58,6 +59,14 @@ public class InscPersonaEduCom {
 
     public void setTomaTransporte(Boolean tomaTransporte) {
         this.tomaTransporte = tomaTransporte;
+    }
+
+    public String getPlazo() {
+        return plazo;
+    }
+
+    public void setPlazo(String plazo) {
+        this.plazo = plazo;
     }
 
     public Educom getEducom() {

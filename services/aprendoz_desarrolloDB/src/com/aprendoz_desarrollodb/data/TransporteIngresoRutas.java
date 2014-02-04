@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.TransporteIngresoRutas
- *  01/30/2014 12:34:16
+ *  02/04/2014 12:37:42
  * 
  */
 public class TransporteIngresoRutas {

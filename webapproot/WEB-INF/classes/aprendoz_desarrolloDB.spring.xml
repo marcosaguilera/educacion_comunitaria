@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 01/30/2014 09:30:00
+<!-- Generated 02/03/2014 15:53:59
 
 Configuration for 'aprendoz_desarrolloDB' database service
 
@@ -174,6 +174,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/Horario.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaFaltantes.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Area.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/FacturacionSapiens.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VProfesorAsignaturaCompleto.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/PadresVistaAprendizajes.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaAlumnosActivosPrejardinNuevos.hbm.xml</value>
@@ -264,6 +265,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/InscAlumAprendizaje.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaMatriculasGraficasTotalDia.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/InscDirectorNivel.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/ImportacionExtracto.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Eventualidades.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Aprendizaje.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Unidad.hbm.xml</value>

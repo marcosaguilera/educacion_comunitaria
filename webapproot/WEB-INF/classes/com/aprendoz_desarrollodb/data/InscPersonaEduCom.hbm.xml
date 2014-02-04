@@ -17,6 +17,9 @@
         <property name="tomaTransporte" type="boolean">
             <column name="toma_transporte" not-null="true"/>
         </property>
+        <property name="plazo" type="string">
+            <column name="plazo" length="20"/>
+        </property>
         <many-to-one name="educom" class="com.aprendoz_desarrollodb.data.Educom" cascade="none">
             <column name="educom_id_educom" not-null="true"/>
         </many-to-one>

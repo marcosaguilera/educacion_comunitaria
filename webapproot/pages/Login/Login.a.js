@@ -112,6 +112,10 @@ font-size: 20px;\
 -moz-border-radius: 8px;\
 border-radius: 8px;\
 }\
+#login_loginMainPanel {\
+background-repeat: no-repeat;\
+background-size: cover;\
+}\
 ';
 Login.prototype._htmlText = '<div id="sample">Sample Markup</div>\
 ';

@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Persona
- *  01/30/2014 12:34:15
+ *  02/04/2014 12:37:42
  * 
  */
 public class Persona {
