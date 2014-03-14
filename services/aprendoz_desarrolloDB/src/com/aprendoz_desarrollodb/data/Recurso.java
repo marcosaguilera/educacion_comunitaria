@@ -5,16 +5,15 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Recurso
- *  02/04/2014 12:37:43
+ *  02/19/2014 10:16:55
  * 
  */
 public class Recurso {
 
     private Integer idRecurso;
     private String recurso;
-    private byte[] documento;
     private String ubicacion;
-    private Integer idSyIdIdSy;
+    private String fileName;
     private Subtopico subtopico;
     private TipoRecurso tipoRecurso;
 
@@ -34,14 +33,6 @@ public class Recurso {
         this.recurso = recurso;
     }
 
-    public byte[] getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(byte[] documento) {
-        this.documento = documento;
-    }
-
     public String getUbicacion() {
         return ubicacion;
     }
@@ -50,12 +41,12 @@ public class Recurso {
         this.ubicacion = ubicacion;
     }
 
-    public Integer getIdSyIdIdSy() {
-        return idSyIdIdSy;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setIdSyIdIdSy(Integer idSyIdIdSy) {
-        this.idSyIdIdSy = idSyIdIdSy;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public Subtopico getSubtopico() {

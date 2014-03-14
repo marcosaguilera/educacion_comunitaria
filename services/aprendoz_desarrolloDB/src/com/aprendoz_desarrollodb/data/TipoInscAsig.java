@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.TipoInscAsig
- *  02/04/2014 12:37:43
+ *  02/19/2014 10:16:54
  * 
  */
 public class TipoInscAsig {

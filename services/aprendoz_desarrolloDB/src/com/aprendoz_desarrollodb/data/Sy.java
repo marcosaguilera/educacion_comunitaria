@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Sy
- *  02/04/2014 12:37:43
+ *  02/19/2014 10:16:55
  * 
  */
 public class Sy {
@@ -29,12 +29,12 @@ public class Sy {
     private Set<com.aprendoz_desarrollodb.data.Horario> horarios = new HashSet<com.aprendoz_desarrollodb.data.Horario>();
     private Set<com.aprendoz_desarrollodb.data.Periodo> periodos = new HashSet<com.aprendoz_desarrollodb.data.Periodo>();
     private Set<com.aprendoz_desarrollodb.data.Asignatura> asignaturas = new HashSet<com.aprendoz_desarrollodb.data.Asignatura>();
+    private Set<com.aprendoz_desarrollodb.data.Educom> educoms = new HashSet<com.aprendoz_desarrollodb.data.Educom>();
     private Set<com.aprendoz_desarrollodb.data.Coordinadores> coordinadoreses = new HashSet<com.aprendoz_desarrollodb.data.Coordinadores>();
     private Set<com.aprendoz_desarrollodb.data.Costos> costoses = new HashSet<com.aprendoz_desarrollodb.data.Costos>();
     private Set<com.aprendoz_desarrollodb.data.Matricula> matriculas = new HashSet<com.aprendoz_desarrollodb.data.Matricula>();
     private Set<com.aprendoz_desarrollodb.data.SesionNivel> sesionNivels = new HashSet<com.aprendoz_desarrollodb.data.SesionNivel>();
     private Set<com.aprendoz_desarrollodb.data.Coordinacion> coordinacions = new HashSet<com.aprendoz_desarrollodb.data.Coordinacion>();
-    private Set<com.aprendoz_desarrollodb.data.Educom> educoms = new HashSet<com.aprendoz_desarrollodb.data.Educom>();
 
     public Integer getIdSy() {
         return idSy;
@@ -164,6 +164,14 @@ public class Sy {
         this.asignaturas = asignaturas;
     }
 
+    public Set<com.aprendoz_desarrollodb.data.Educom> getEducoms() {
+        return educoms;
+    }
+
+    public void setEducoms(Set<com.aprendoz_desarrollodb.data.Educom> educoms) {
+        this.educoms = educoms;
+    }
+
     public Set<com.aprendoz_desarrollodb.data.Coordinadores> getCoordinadoreses() {
         return coordinadoreses;
     }
@@ -202,14 +210,6 @@ public class Sy {
 
     public void setCoordinacions(Set<com.aprendoz_desarrollodb.data.Coordinacion> coordinacions) {
         this.coordinacions = coordinacions;
-    }
-
-    public Set<com.aprendoz_desarrollodb.data.Educom> getEducoms() {
-        return educoms;
-    }
-
-    public void setEducoms(Set<com.aprendoz_desarrollodb.data.Educom> educoms) {
-        this.educoms = educoms;
     }
 
 }

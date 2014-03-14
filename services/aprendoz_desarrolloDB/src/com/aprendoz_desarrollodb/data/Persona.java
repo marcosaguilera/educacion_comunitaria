@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Persona
- *  02/04/2014 12:37:42
+ *  02/19/2014 10:16:55
  * 
  */
 public class Persona {
@@ -76,6 +76,7 @@ public class Persona {
     private Pais pais;
     private TipoPersona tipoPersona;
     private GrupoFamiliar grupoFamiliar;
+    private Set<com.aprendoz_desarrollodb.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses = new HashSet<com.aprendoz_desarrollodb.data.SeguridadPersonasAccesos>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAprendizaje> inscAlumAprendizajes = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAprendizaje>();
     private Set<com.aprendoz_desarrollodb.data.TransporteInscAlumTransporte> transporteInscAlumTransportes = new HashSet<com.aprendoz_desarrollodb.data.TransporteInscAlumTransporte>();
     private Set<com.aprendoz_desarrollodb.data.CalificacionFinal> calificacionFinals = new HashSet<com.aprendoz_desarrollodb.data.CalificacionFinal>();
@@ -99,6 +100,7 @@ public class Persona {
     private Set<com.aprendoz_desarrollodb.data.LogDocentes> logDocenteses = new HashSet<com.aprendoz_desarrollodb.data.LogDocentes>();
     private Set<com.aprendoz_desarrollodb.data.PersonaCarne> personaCarnes = new HashSet<com.aprendoz_desarrollodb.data.PersonaCarne>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy> inscAlumAsigCopies = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy>();
+    private Set<com.aprendoz_desarrollodb.data.PerfilPersonaImg> perfilPersonaImgs = new HashSet<com.aprendoz_desarrollodb.data.PerfilPersonaImg>();
     private Set<com.aprendoz_desarrollodb.data.Coordinadores> coordinadoreses = new HashSet<com.aprendoz_desarrollodb.data.Coordinadores>();
     private Set<com.aprendoz_desarrollodb.data.Matricula> matriculas = new HashSet<com.aprendoz_desarrollodb.data.Matricula>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsig> inscAlumAsigs = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsig>();
@@ -611,6 +613,14 @@ public class Persona {
         this.grupoFamiliar = grupoFamiliar;
     }
 
+    public Set<com.aprendoz_desarrollodb.data.SeguridadPersonasAccesos> getSeguridadPersonasAccesoses() {
+        return seguridadPersonasAccesoses;
+    }
+
+    public void setSeguridadPersonasAccesoses(Set<com.aprendoz_desarrollodb.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses) {
+        this.seguridadPersonasAccesoses = seguridadPersonasAccesoses;
+    }
+
     public Set<com.aprendoz_desarrollodb.data.InscAlumAprendizaje> getInscAlumAprendizajes() {
         return inscAlumAprendizajes;
     }
@@ -793,6 +803,14 @@ public class Persona {
 
     public void setInscAlumAsigCopies(Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy> inscAlumAsigCopies) {
         this.inscAlumAsigCopies = inscAlumAsigCopies;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.PerfilPersonaImg> getPerfilPersonaImgs() {
+        return perfilPersonaImgs;
+    }
+
+    public void setPerfilPersonaImgs(Set<com.aprendoz_desarrollodb.data.PerfilPersonaImg> perfilPersonaImgs) {
+        this.perfilPersonaImgs = perfilPersonaImgs;
     }
 
     public Set<com.aprendoz_desarrollodb.data.Coordinadores> getCoordinadoreses() {

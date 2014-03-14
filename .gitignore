@@ -2,3 +2,7 @@
 *.war
 
 webapproot/timestamp.txt
+
+webapproot/timestamp.txt
+
+dist/educacion_comunitaria.war
