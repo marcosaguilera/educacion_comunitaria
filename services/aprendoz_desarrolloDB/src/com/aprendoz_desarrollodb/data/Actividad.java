@@ -8,20 +8,20 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Actividad
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class Actividad {
 
     private Integer idActividad;
-    private String actividad;
-    private Date fecha;
-    private Boolean requeridoAlternativo;
-    private Integer idSyIdIdSy;
     private Subtopico subtopico;
     private TipoValoracion tipoValoracion;
     private TipoDesempeno tipoDesempeno;
     private TipoActividad tipoActividad;
+    private String actividad;
+    private Date fecha;
+    private Boolean requeridoAlternativo;
+    private Integer idSyIdIdSy;
     private Set<com.aprendoz_desarrollodb.data.InscAlumActividad> inscAlumActividads = new HashSet<com.aprendoz_desarrollodb.data.InscAlumActividad>();
 
     public Integer getIdActividad() {
@@ -30,38 +30,6 @@ public class Actividad {
 
     public void setIdActividad(Integer idActividad) {
         this.idActividad = idActividad;
-    }
-
-    public String getActividad() {
-        return actividad;
-    }
-
-    public void setActividad(String actividad) {
-        this.actividad = actividad;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public Boolean getRequeridoAlternativo() {
-        return requeridoAlternativo;
-    }
-
-    public void setRequeridoAlternativo(Boolean requeridoAlternativo) {
-        this.requeridoAlternativo = requeridoAlternativo;
-    }
-
-    public Integer getIdSyIdIdSy() {
-        return idSyIdIdSy;
-    }
-
-    public void setIdSyIdIdSy(Integer idSyIdIdSy) {
-        this.idSyIdIdSy = idSyIdIdSy;
     }
 
     public Subtopico getSubtopico() {
@@ -94,6 +62,38 @@ public class Actividad {
 
     public void setTipoActividad(TipoActividad tipoActividad) {
         this.tipoActividad = tipoActividad;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Boolean getRequeridoAlternativo() {
+        return requeridoAlternativo;
+    }
+
+    public void setRequeridoAlternativo(Boolean requeridoAlternativo) {
+        this.requeridoAlternativo = requeridoAlternativo;
+    }
+
+    public Integer getIdSyIdIdSy() {
+        return idSyIdIdSy;
+    }
+
+    public void setIdSyIdIdSy(Integer idSyIdIdSy) {
+        this.idSyIdIdSy = idSyIdIdSy;
     }
 
     public Set<com.aprendoz_desarrollodb.data.InscAlumActividad> getInscAlumActividads() {

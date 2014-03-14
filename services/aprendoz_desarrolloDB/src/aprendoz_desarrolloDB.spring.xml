@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 01/30/2014 09:30:00
+<!-- Generated 03/14/2014 11:48:04
 
 Configuration for 'aprendoz_desarrolloDB' database service
 
@@ -103,6 +103,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/TipoEps.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/DocentesVistaPersonasDemografica.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/InscAlumActividad.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/SeguridadPermisosModulos.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/PadresVistaCalifFinal.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/CafeteriaProteina.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/InscripcionesVistaInscAlumnCurso.hbm.xml</value>
@@ -117,6 +118,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/TmpBoletin20122013.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/TipoPago.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/BimestreSy.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/SecretariaRetiroEstudiantes.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ReportesDependencias.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Vistaasistencia.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaDashboardAvanzadosYMagistrales.hbm.xml</value>
@@ -129,6 +131,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/AccStudentCardAuthorization.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/PadresVistaActividades.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/BusDriver.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/SecretariaEquivalenciaNotas.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ReporteDavivienda.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/InscCoordinadoresCurso.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Asignatura.hbm.xml</value>
@@ -141,17 +144,13 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/AdministracionVistaAsignaturasCurso.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VProfesorAsignatura.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Actividad.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaCopy6.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/DocentesInscCursoAsignatura.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaCopy5.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/EducomLog.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/TransporteInscAlumTransporte.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaCopy4.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaCopy3.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Cronograma.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaCopy2.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/BisUsers.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/DocentesVistaAsignaturas.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/DocentesVistaInscAlumnAsig.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/DocentesVistaAsignaturas.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ServiciosListadoServiciosAlumnos.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/TipoLugar.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Coordinadores.hbm.xml</value>
@@ -160,6 +159,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/DimensionComprension.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Sy.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/AprLogrados.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/PerfilPersonaImg.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/TipoEventualidad.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ImportacionCartera.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/CafeteriaMenu.hbm.xml</value>
@@ -174,6 +174,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/Horario.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ImportacionDaviviendaFaltantes.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Area.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/FacturacionSapiens.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VProfesorAsignaturaCompleto.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/PadresVistaAprendizajes.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaAlumnosActivosPrejardinNuevos.hbm.xml</value>
@@ -201,8 +202,10 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/AprEsperados.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/InscCursoAsig.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaEventualidadesNotificacionesFamilia.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/SeguridadPersonasAccesos.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/ImportacionCarteraCopy.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Promocion.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/CafemuObservacionesClase.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Cargos.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/TmpEnrLog.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/PadresVistaRecursos.hbm.xml</value>
@@ -253,7 +256,6 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/BusBus.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/DimensionCurricular.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/EventualidadPersonas.hbm.xml</value>
-<value>com/aprendoz_desarrollodb/data/InscAlumExtraCurricular.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaPersonasGrupoFamiliar.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaInscAlumnCurso.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/CafeteriaGartinuras.hbm.xml</value>
@@ -264,6 +266,7 @@ Configuration for 'aprendoz_desarrolloDB' database service
 <value>com/aprendoz_desarrollodb/data/InscAlumAprendizaje.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/VistaMatriculasGraficasTotalDia.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/InscDirectorNivel.hbm.xml</value>
+<value>com/aprendoz_desarrollodb/data/ImportacionExtracto.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Eventualidades.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Aprendizaje.hbm.xml</value>
 <value>com/aprendoz_desarrollodb/data/Unidad.hbm.xml</value>

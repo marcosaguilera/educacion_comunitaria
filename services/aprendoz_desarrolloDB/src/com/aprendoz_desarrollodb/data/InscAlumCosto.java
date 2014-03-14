@@ -1,27 +1,28 @@
 
 package com.aprendoz_desarrollodb.data;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 
 /**
  *  aprendoz_desarrolloDB.InscAlumCosto
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class InscAlumCosto {
 
     private Integer idInscAlumCosto;
+    private Sy sy;
+    private Persona persona;
+    private Costos costos;
     private Boolean inscrito;
-    private Integer descuentoPorcentaje;
+    private BigDecimal descuentoPorcentaje;
     private Double descuentoValor;
     private Double valorFinalDescuento;
     private Date fechaInicio;
     private Date fechaFin;
     private String observacion;
-    private Sy sy;
-    private Persona persona;
-    private Costos costos;
 
     public Integer getIdInscAlumCosto() {
         return idInscAlumCosto;
@@ -29,6 +30,30 @@ public class InscAlumCosto {
 
     public void setIdInscAlumCosto(Integer idInscAlumCosto) {
         this.idInscAlumCosto = idInscAlumCosto;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Costos getCostos() {
+        return costos;
+    }
+
+    public void setCostos(Costos costos) {
+        this.costos = costos;
     }
 
     public Boolean getInscrito() {
@@ -39,11 +64,11 @@ public class InscAlumCosto {
         this.inscrito = inscrito;
     }
 
-    public Integer getDescuentoPorcentaje() {
+    public BigDecimal getDescuentoPorcentaje() {
         return descuentoPorcentaje;
     }
 
-    public void setDescuentoPorcentaje(Integer descuentoPorcentaje) {
+    public void setDescuentoPorcentaje(BigDecimal descuentoPorcentaje) {
         this.descuentoPorcentaje = descuentoPorcentaje;
     }
 
@@ -85,30 +110,6 @@ public class InscAlumCosto {
 
     public void setObservacion(String observacion) {
         this.observacion = observacion;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Costos getCostos() {
-        return costos;
-    }
-
-    public void setCostos(Costos costos) {
-        this.costos = costos;
     }
 
 }

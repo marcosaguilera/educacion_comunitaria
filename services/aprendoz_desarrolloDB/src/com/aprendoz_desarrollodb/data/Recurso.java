@@ -5,18 +5,17 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Recurso
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class Recurso {
 
     private Integer idRecurso;
-    private String recurso;
-    private byte[] documento;
-    private String ubicacion;
-    private Integer idSyIdIdSy;
     private Subtopico subtopico;
     private TipoRecurso tipoRecurso;
+    private String recurso;
+    private String ubicacion;
+    private String fileName;
 
     public Integer getIdRecurso() {
         return idRecurso;
@@ -24,38 +23,6 @@ public class Recurso {
 
     public void setIdRecurso(Integer idRecurso) {
         this.idRecurso = idRecurso;
-    }
-
-    public String getRecurso() {
-        return recurso;
-    }
-
-    public void setRecurso(String recurso) {
-        this.recurso = recurso;
-    }
-
-    public byte[] getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(byte[] documento) {
-        this.documento = documento;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
-    public Integer getIdSyIdIdSy() {
-        return idSyIdIdSy;
-    }
-
-    public void setIdSyIdIdSy(Integer idSyIdIdSy) {
-        this.idSyIdIdSy = idSyIdIdSy;
     }
 
     public Subtopico getSubtopico() {
@@ -72,6 +39,30 @@ public class Recurso {
 
     public void setTipoRecurso(TipoRecurso tipoRecurso) {
         this.tipoRecurso = tipoRecurso;
+    }
+
+    public String getRecurso() {
+        return recurso;
+    }
+
+    public void setRecurso(String recurso) {
+        this.recurso = recurso;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
 }

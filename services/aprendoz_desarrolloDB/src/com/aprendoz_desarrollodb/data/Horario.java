@@ -5,18 +5,18 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Horario
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class Horario {
 
     private Integer idHorario;
-    private Integer numeroSesion;
-    private String dia;
     private Curso curso;
     private Asignatura asignatura;
     private Sy sy;
     private TipoSemana tipoSemana;
+    private Integer numeroSesion;
+    private String dia;
 
     public Integer getIdHorario() {
         return idHorario;
@@ -24,22 +24,6 @@ public class Horario {
 
     public void setIdHorario(Integer idHorario) {
         this.idHorario = idHorario;
-    }
-
-    public Integer getNumeroSesion() {
-        return numeroSesion;
-    }
-
-    public void setNumeroSesion(Integer numeroSesion) {
-        this.numeroSesion = numeroSesion;
-    }
-
-    public String getDia() {
-        return dia;
-    }
-
-    public void setDia(String dia) {
-        this.dia = dia;
     }
 
     public Curso getCurso() {
@@ -72,6 +56,22 @@ public class Horario {
 
     public void setTipoSemana(TipoSemana tipoSemana) {
         this.tipoSemana = tipoSemana;
+    }
+
+    public Integer getNumeroSesion() {
+        return numeroSesion;
+    }
+
+    public void setNumeroSesion(Integer numeroSesion) {
+        this.numeroSesion = numeroSesion;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
     }
 
 }

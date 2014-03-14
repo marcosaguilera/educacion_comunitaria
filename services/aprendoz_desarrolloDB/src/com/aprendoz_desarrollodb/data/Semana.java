@@ -5,15 +5,15 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Semana
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class Semana {
 
     private Integer idSemana;
-    private Integer numeroSemana;
     private Sy sy;
     private TipoSemana tipoSemana;
+    private Integer numeroSemana;
 
     public Integer getIdSemana() {
         return idSemana;
@@ -21,14 +21,6 @@ public class Semana {
 
     public void setIdSemana(Integer idSemana) {
         this.idSemana = idSemana;
-    }
-
-    public Integer getNumeroSemana() {
-        return numeroSemana;
-    }
-
-    public void setNumeroSemana(Integer numeroSemana) {
-        this.numeroSemana = numeroSemana;
     }
 
     public Sy getSy() {
@@ -45,6 +37,14 @@ public class Semana {
 
     public void setTipoSemana(TipoSemana tipoSemana) {
         this.tipoSemana = tipoSemana;
+    }
+
+    public Integer getNumeroSemana() {
+        return numeroSemana;
+    }
+
+    public void setNumeroSemana(Integer numeroSemana) {
+        this.numeroSemana = numeroSemana;
     }
 
 }

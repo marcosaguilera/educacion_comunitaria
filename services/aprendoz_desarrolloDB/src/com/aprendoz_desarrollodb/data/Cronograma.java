@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.Cronograma
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class Cronograma {
 
     private Integer idCronograma;
-    private Date fecha;
-    private String descripcion;
     private TipoDia tipoDia;
     private Sy sy;
+    private Date fecha;
+    private String descripcion;
 
     public Integer getIdCronograma() {
         return idCronograma;
@@ -23,22 +23,6 @@ public class Cronograma {
 
     public void setIdCronograma(Integer idCronograma) {
         this.idCronograma = idCronograma;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public TipoDia getTipoDia() {
@@ -55,6 +39,22 @@ public class Cronograma {
 
     public void setSy(Sy sy) {
         this.sy = sy;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
 }

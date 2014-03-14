@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.ImportacionDavivienda
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class ImportacionDavivienda {
@@ -15,7 +15,7 @@ public class ImportacionDavivienda {
     private String tarjeta;
     private String nombresocio;
     private String numeroidentificacion;
-    private String estado;
+    private String codigo;
     private Date fechaCreacion;
     private Date fechaModificacion;
 
@@ -51,12 +51,12 @@ public class ImportacionDavivienda {
         this.numeroidentificacion = numeroidentificacion;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public Date getFechaCreacion() {

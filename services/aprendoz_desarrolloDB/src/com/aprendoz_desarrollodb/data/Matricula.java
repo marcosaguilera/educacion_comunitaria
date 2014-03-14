@@ -6,19 +6,19 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.Matricula
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class Matricula {
 
     private Integer idMatricula;
+    private Curso curso;
+    private Sy sy;
+    private Persona persona;
     private Double valorAnual;
     private Integer valorMensual;
     private Date fechaMatricula;
     private String comentario;
-    private Curso curso;
-    private Sy sy;
-    private Persona persona;
 
     public Integer getIdMatricula() {
         return idMatricula;
@@ -26,6 +26,30 @@ public class Matricula {
 
     public void setIdMatricula(Integer idMatricula) {
         this.idMatricula = idMatricula;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Double getValorAnual() {
@@ -58,30 +82,6 @@ public class Matricula {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
 }

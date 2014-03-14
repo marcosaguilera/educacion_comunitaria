@@ -6,19 +6,22 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.InscPersonaEduCom
- *  01/30/2014 12:34:15
+ *  03/14/2014 11:48:13
  * 
  */
 public class InscPersonaEduCom {
 
     private Integer idInscPersonaEduCom;
-    private Date fechaCreacion;
-    private Date fechaActualizacion;
-    private Double descuento;
-    private Boolean tomaTransporte;
     private Educom educom;
     private TipoPago tipoPago;
     private Persona persona;
+    private Date fechaCreacion;
+    private Date fechaActualizacion;
+    private Double descuento;
+    private Byte tomaTransporte;
+    private String plazo;
+    private Boolean activoRetirado;
+    private Boolean beca;
 
     public Integer getIdInscPersonaEduCom() {
         return idInscPersonaEduCom;
@@ -26,6 +29,30 @@ public class InscPersonaEduCom {
 
     public void setIdInscPersonaEduCom(Integer idInscPersonaEduCom) {
         this.idInscPersonaEduCom = idInscPersonaEduCom;
+    }
+
+    public Educom getEducom() {
+        return educom;
+    }
+
+    public void setEducom(Educom educom) {
+        this.educom = educom;
+    }
+
+    public TipoPago getTipoPago() {
+        return tipoPago;
+    }
+
+    public void setTipoPago(TipoPago tipoPago) {
+        this.tipoPago = tipoPago;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Date getFechaCreacion() {
@@ -52,36 +79,36 @@ public class InscPersonaEduCom {
         this.descuento = descuento;
     }
 
-    public Boolean getTomaTransporte() {
+    public Byte getTomaTransporte() {
         return tomaTransporte;
     }
 
-    public void setTomaTransporte(Boolean tomaTransporte) {
+    public void setTomaTransporte(Byte tomaTransporte) {
         this.tomaTransporte = tomaTransporte;
     }
 
-    public Educom getEducom() {
-        return educom;
+    public String getPlazo() {
+        return plazo;
     }
 
-    public void setEducom(Educom educom) {
-        this.educom = educom;
+    public void setPlazo(String plazo) {
+        this.plazo = plazo;
     }
 
-    public TipoPago getTipoPago() {
-        return tipoPago;
+    public Boolean getActivoRetirado() {
+        return activoRetirado;
     }
 
-    public void setTipoPago(TipoPago tipoPago) {
-        this.tipoPago = tipoPago;
+    public void setActivoRetirado(Boolean activoRetirado) {
+        this.activoRetirado = activoRetirado;
     }
 
-    public Persona getPersona() {
-        return persona;
+    public Boolean getBeca() {
+        return beca;
     }
 
-    public void setPersona(Persona persona) {
-        this.persona = persona;
+    public void setBeca(Boolean beca) {
+        this.beca = beca;
     }
 
 }
