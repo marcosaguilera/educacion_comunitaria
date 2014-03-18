@@ -16,9 +16,7 @@ dojo.declare("Main", wm.Page, {
         if(count===0){
            main.global_ls_costos.filter.setValue("tipoCosto", tipo);
            this.global_ls_costos.update(); 
-        }else{
-            //nothing to do
-        }
+        }else{/*nothing to do*/}
         main.costoslookup1.setReadonly(true);
         main.syLookup2.setReadonly(true);	    
 	},
@@ -72,7 +70,9 @@ dojo.declare("Main", wm.Page, {
 	inscripciones_clearFilterClick: function(inSender) {
         this.inscripciones_cursos_texto.clear();
         this.inscripciones_search_people_text.clear();
-		this.inscpersonaeducomLiveVariable1.filter.clearData();
+		//this.inscpersonaeducomLiveVariable1.filter.clearData();
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
         this.inscpersonaeducomLiveVariable1.update();
 	},
     // enable button described above
@@ -130,17 +130,14 @@ dojo.declare("Main", wm.Page, {
 	educomLiveForm1BeginUpdate1: function(inSender) {
 		var count= main.global_ls_costos.getCount();
         var tipo= 2;
-        console.log(count);
         if(count===0){
            main.global_ls_costos.filter.setValue("tipoCosto", tipo);
            this.global_ls_costos.update(); 
-        }else{
-            //nothing to do
-        }
+        }else{/*nothing to do*/}
         main.costoslookup1.setReadonly(true);
         main.syLookup2.setReadonly(true);
-	},
-   
+	},  
+    // inserting record / data for external user
 	personaLiveForm1BeginInsert: function(inSender) {
 		this.global_ls_tipopersona.filter.setValue("idTipoPersona","28");
         this.global_ls_grupoFamiliar.filter.setValue("idGrupoFamiliar","10586");
@@ -148,7 +145,8 @@ dojo.declare("Main", wm.Page, {
         this.global_ls_tipopersona.update();
         this.global_ls_grupoFamiliar.update();
         this.global_ls_pais.update();
-	},
+	},  
+    // updating record / data for external user
 	personaLiveForm1BeginUpdate: function(inSender) {
 		this.global_ls_tipopersona.filter.setValue("idTipoPersona","28");
         this.global_ls_grupoFamiliar.filter.setValue("idGrupoFamiliar","10586");
@@ -156,7 +154,24 @@ dojo.declare("Main", wm.Page, {
         this.global_ls_tipopersona.update();
         this.global_ls_grupoFamiliar.update();
         this.global_ls_pais.update();
+	},  
+    // onShow inscripciones educomLiveVariable1 will start update
+	Cursos_extracurricularesShow: function(inSender) {
+        this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+        this.educomLiveVariable1.update();
 	},
-
+    // sometime appears a blnk space between the records in dojoGrid, maybe this script solve it!
+	educomLiveVariable1Success: function(inSender, inDeprecated) {
+		main.educomDojoGrid.setSortIndex(2);
+	},
+    //onShow inscripciones inscpersonaeducomLiveVariable1 will start update
+	inscripcionesShow2: function(inSender) {
+        this.inscpersonaeducomLiveVariable1.update();
+	},
+    //when the insert begining the list of curses will filter by the active 
+	inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
+		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+        this.educomLiveVariable1.update();
+	},
 	_end: 0
 });

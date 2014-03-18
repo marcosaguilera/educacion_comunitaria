@@ -347,12 +347,6 @@
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Coordinadores"/>
         </set>
-        <set name="inscPersonaEduComs" inverse="true" cascade="">
-            <key>
-                <column name="persona_id_persona" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_desarrollodb.data.InscPersonaEduCom"/>
-        </set>
         <set name="matriculas" inverse="true" cascade="">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
@@ -382,6 +376,12 @@
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Coordinacion"/>
+        </set>
+        <set name="inscPersonaEduComs" inverse="true" cascade="">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.InscPersonaEduCom"/>
         </set>
     </class>
 </hibernate-mapping>

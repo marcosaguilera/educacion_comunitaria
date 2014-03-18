@@ -5,16 +5,16 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.InscPersonaGrupoFamiliar
- *  03/14/2014 11:48:13
+ *  03/18/2014 08:50:36
  * 
  */
 public class InscPersonaGrupoFamiliar {
 
     private Integer idInscPersonaGrupoFamiliar;
+    private Boolean responsable;
     private Persona persona;
     private TipoPersona tipoPersona;
     private GrupoFamiliar grupoFamiliar;
-    private Boolean responsable;
 
     public Integer getIdInscPersonaGrupoFamiliar() {
         return idInscPersonaGrupoFamiliar;
@@ -22,6 +22,14 @@ public class InscPersonaGrupoFamiliar {
 
     public void setIdInscPersonaGrupoFamiliar(Integer idInscPersonaGrupoFamiliar) {
         this.idInscPersonaGrupoFamiliar = idInscPersonaGrupoFamiliar;
+    }
+
+    public Boolean getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Boolean responsable) {
+        this.responsable = responsable;
     }
 
     public Persona getPersona() {
@@ -46,14 +54,6 @@ public class InscPersonaGrupoFamiliar {
 
     public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
         this.grupoFamiliar = grupoFamiliar;
-    }
-
-    public Boolean getResponsable() {
-        return responsable;
-    }
-
-    public void setResponsable(Boolean responsable) {
-        this.responsable = responsable;
     }
 
 }

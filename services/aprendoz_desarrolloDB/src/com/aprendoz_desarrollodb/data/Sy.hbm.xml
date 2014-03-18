@@ -86,12 +86,6 @@
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Asignatura"/>
         </set>
-        <set name="educoms" inverse="true" cascade="">
-            <key>
-                <column name="sy_id_sy" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_desarrollodb.data.Educom"/>
-        </set>
         <set name="coordinadoreses" inverse="true" cascade="">
             <key>
                 <column name="SY_id_SY" not-null="true"/>
@@ -127,6 +121,12 @@
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Coordinacion"/>
+        </set>
+        <set name="educoms" inverse="true" cascade="">
+            <key>
+                <column name="sy_id_sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.Educom"/>
         </set>
     </class>
 </hibernate-mapping>

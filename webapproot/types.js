@@ -6143,7 +6143,7 @@ wm.types = {
 		},
 		"com.aprendoz_desarrollodb.data.Educom": {
 			"fields": {
-				"activoRetirado": {
+				"activo_retirado": {
 					"exclude": [],
 					"fieldOrder": 1,
 					"fieldSubType": null,
@@ -6221,7 +6221,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				},
 				"edadRequeridaInicial": {
 					"exclude": [],
@@ -6451,7 +6451,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				},
 				"lunes": {
 					"exclude": [],
@@ -6461,7 +6461,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				},
 				"martes": {
 					"exclude": [],
@@ -6471,7 +6471,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				},
 				"miercoles": {
 					"exclude": [],
@@ -6481,7 +6481,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				},
 				"numeroHoras": {
 					"exclude": [],
@@ -6521,7 +6521,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				},
 				"sy": {
 					"exclude": [],
@@ -6581,7 +6581,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": false,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				}
 			},
 			"internal": false,
@@ -11623,7 +11623,7 @@ wm.types = {
 					"isList": false,
 					"noChange": [],
 					"required": true,
-					"type": "java.lang.Byte"
+					"type": "java.lang.Boolean"
 				}
 			},
 			"internal": false,
@@ -13678,7 +13678,7 @@ wm.types = {
 				},
 				"coordinacions": {
 					"exclude": [],
-					"fieldOrder": 94,
+					"fieldOrder": 93,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13888,7 +13888,7 @@ wm.types = {
 				},
 				"inscAlumAsigCopy2s": {
 					"exclude": [],
-					"fieldOrder": 93,
+					"fieldOrder": 92,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13898,7 +13898,7 @@ wm.types = {
 				},
 				"inscAlumAsigs": {
 					"exclude": [],
-					"fieldOrder": 91,
+					"fieldOrder": 90,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13908,7 +13908,7 @@ wm.types = {
 				},
 				"inscAlumCostos": {
 					"exclude": [],
-					"fieldOrder": 92,
+					"fieldOrder": 91,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -13978,7 +13978,7 @@ wm.types = {
 				},
 				"inscPersonaEduComs": {
 					"exclude": [],
-					"fieldOrder": 89,
+					"fieldOrder": 94,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -14078,7 +14078,7 @@ wm.types = {
 				},
 				"matriculas": {
 					"exclude": [],
-					"fieldOrder": 90,
+					"fieldOrder": 89,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16300,7 +16300,7 @@ wm.types = {
 				},
 				"coordinacions": {
 					"exclude": [],
-					"fieldOrder": 22,
+					"fieldOrder": 21,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16310,7 +16310,7 @@ wm.types = {
 				},
 				"coordinadoreses": {
 					"exclude": [],
-					"fieldOrder": 17,
+					"fieldOrder": 16,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16320,7 +16320,7 @@ wm.types = {
 				},
 				"costoses": {
 					"exclude": [],
-					"fieldOrder": 18,
+					"fieldOrder": 17,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16340,7 +16340,7 @@ wm.types = {
 				},
 				"educoms": {
 					"exclude": [],
-					"fieldOrder": 16,
+					"fieldOrder": 22,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16430,7 +16430,7 @@ wm.types = {
 				},
 				"matriculas": {
 					"exclude": [],
-					"fieldOrder": 19,
+					"fieldOrder": 18,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16470,7 +16470,7 @@ wm.types = {
 				},
 				"secretariaEquivalenciaNotases": {
 					"exclude": [],
-					"fieldOrder": 21,
+					"fieldOrder": 20,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -16490,7 +16490,7 @@ wm.types = {
 				},
 				"sesionNivels": {
 					"exclude": [],
-					"fieldOrder": 20,
+					"fieldOrder": 19,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,

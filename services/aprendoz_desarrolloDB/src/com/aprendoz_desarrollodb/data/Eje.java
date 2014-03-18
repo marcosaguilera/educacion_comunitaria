@@ -5,16 +5,16 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Eje
- *  03/14/2014 11:48:13
+ *  03/18/2014 08:50:37
  * 
  */
 public class Eje {
 
     private Integer idEje;
-    private Subarea subarea;
     private String ejeTematico;
     private String axis;
     private Boolean activo;
+    private Subarea subarea;
 
     public Integer getIdEje() {
         return idEje;
@@ -22,14 +22,6 @@ public class Eje {
 
     public void setIdEje(Integer idEje) {
         this.idEje = idEje;
-    }
-
-    public Subarea getSubarea() {
-        return subarea;
-    }
-
-    public void setSubarea(Subarea subarea) {
-        this.subarea = subarea;
     }
 
     public String getEjeTematico() {
@@ -54,6 +46,14 @@ public class Eje {
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
+    }
+
+    public Subarea getSubarea() {
+        return subarea;
+    }
+
+    public void setSubarea(Subarea subarea) {
+        this.subarea = subarea;
     }
 
 }
