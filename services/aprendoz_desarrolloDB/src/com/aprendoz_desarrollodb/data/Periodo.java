@@ -8,17 +8,17 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Periodo
- *  03/14/2014 11:48:13
+ *  03/18/2014 08:50:36
  * 
  */
 public class Periodo {
 
     private Integer idPeriodo;
-    private TipoPeriodo tipoPeriodo;
-    private Sy sy;
     private String periodo;
     private Date fechaInicio;
     private Date fechaFin;
+    private TipoPeriodo tipoPeriodo;
+    private Sy sy;
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy> inscAlumAsigCopies = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2> inscAlumAsigCopy2s = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2>();
     private Set<com.aprendoz_desarrollodb.data.InscCursoAsig> inscCursoAsigs = new HashSet<com.aprendoz_desarrollodb.data.InscCursoAsig>();
@@ -30,22 +30,6 @@ public class Periodo {
 
     public void setIdPeriodo(Integer idPeriodo) {
         this.idPeriodo = idPeriodo;
-    }
-
-    public TipoPeriodo getTipoPeriodo() {
-        return tipoPeriodo;
-    }
-
-    public void setTipoPeriodo(TipoPeriodo tipoPeriodo) {
-        this.tipoPeriodo = tipoPeriodo;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
     public String getPeriodo() {
@@ -70,6 +54,22 @@ public class Periodo {
 
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public TipoPeriodo getTipoPeriodo() {
+        return tipoPeriodo;
+    }
+
+    public void setTipoPeriodo(TipoPeriodo tipoPeriodo) {
+        this.tipoPeriodo = tipoPeriodo;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy> getInscAlumAsigCopies() {

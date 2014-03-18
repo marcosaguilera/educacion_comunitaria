@@ -5,7 +5,7 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.TmpBoletin20122013
- *  03/14/2014 11:48:13
+ *  03/18/2014 08:50:37
  * 
  */
 public class TmpBoletin20122013 {

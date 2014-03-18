@@ -5,7 +5,7 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.VistaAlumnosActivos
- *  03/14/2014 11:48:14
+ *  03/18/2014 08:50:36
  * 
  */
 public class VistaAlumnosActivos {

@@ -5,14 +5,14 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.BusPhone
- *  03/14/2014 11:48:13
+ *  03/18/2014 08:50:37
  * 
  */
 public class BusPhone {
 
     private Integer id;
-    private BusDriver busDriver;
     private String phone;
+    private BusDriver busDriver;
 
     public Integer getId() {
         return id;
@@ -22,20 +22,20 @@ public class BusPhone {
         this.id = id;
     }
 
-    public BusDriver getBusDriver() {
-        return busDriver;
-    }
-
-    public void setBusDriver(BusDriver busDriver) {
-        this.busDriver = busDriver;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public BusDriver getBusDriver() {
+        return busDriver;
+    }
+
+    public void setBusDriver(BusDriver busDriver) {
+        this.busDriver = busDriver;
     }
 
 }
