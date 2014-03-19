@@ -59,6 +59,8 @@ dojo.declare("Main", wm.Page, {
     // on beginInsert enable fechaCreacionEditor1
 	inscpersonaeducomLiveForm1BeginInsert: function(inSender) {
 		this.fechaCreacionEditor1.enable();
+        this.tipoPagoLookup1.setDisplayValue("Diners");
+        this.descuentoEditor1.setDataValue("0");
 	},
     // filter personaLiveVariable
 	inscripciones_list_personasSelect1: function(inSender, inItem) {
@@ -70,7 +72,6 @@ dojo.declare("Main", wm.Page, {
 	inscripciones_clearFilterClick: function(inSender) {
         this.inscripciones_cursos_texto.clear();
         this.inscripciones_search_people_text.clear();
-		//this.inscpersonaeducomLiveVariable1.filter.clearData();
         this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
         this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
         this.inscpersonaeducomLiveVariable1.update();
@@ -172,6 +173,50 @@ dojo.declare("Main", wm.Page, {
 	inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
 		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
         this.educomLiveVariable1.update();
+	},
+	inscpersonaeducomLiveForm1InsertData1: function(inSender) {
+		var usuario_sistema= main.templateUsernameVar.data.dataValue;
+        var hoy= new Date().getTime();
+        var idpersona= this.personaLookup1.getDataValue().idPersona;
+        var idcurso= this.educomLookup1.getDataValue().idEducom;
+        var accion= "c-"+idpersona+"-"+idcurso;
+        var tabla= "inscpersonaeducom";
+        this.accionesLogEducom.setValue("usuario", usuario_sistema);
+        this.accionesLogEducom.setValue("accionRealizada", accion);
+        this.accionesLogEducom.setValue("tablaAfectada", tabla);
+        this.accionesLogEducom.setValue("fechaCreacion", hoy);
+        this.accionesLogEducom.setValue("fechaActualizacion", hoy);
+        this.logEducom.setDataSet(this.accionesLogEducom); 
+        this.logEducom.insertData(); 
+	},
+	inscpersonaeducomLiveForm1UpdateData: function(inSender) {
+		var usuario_sistema= main.templateUsernameVar.data.dataValue;
+        var hoy= new Date().getTime();
+        var idpersona= this.personaLookup1.getDataValue().idPersona;
+        var idcurso= this.educomLookup1.getDataValue().idEducom;
+        var accion= "u-"+idpersona+"-"+idcurso;
+        var tabla= "inscpersonaeducom";
+        this.accionesLogEducom.setValue("usuario", usuario_sistema);
+        this.accionesLogEducom.setValue("accionRealizada", accion);
+        this.accionesLogEducom.setValue("tablaAfectada", tabla);
+        this.accionesLogEducom.setValue("fechaCreacion", hoy);
+        this.accionesLogEducom.setValue("fechaActualizacion", hoy);
+        this.logEducom.setDataSet(this.accionesLogEducom); 
+        this.logEducom.insertData(); 
+	},
+	inscpersonaeducomLiveForm1DeleteData: function(inSender) {
+		var usuario_sistema= main.templateUsernameVar.data.dataValue;
+        var hoy= new Date().getTime();
+        var id= main.inscpersonaeducomDojoGrid.selectedItem.data.idInscPersonaEduCom;
+        var accion= "de-ideducom"+id;
+        var tabla= "inscpersonaeducom";
+        this.accionesLogEducom.setValue("usuario", usuario_sistema);
+        this.accionesLogEducom.setValue("accionRealizada", accion);
+        this.accionesLogEducom.setValue("tablaAfectada", tabla);
+        this.accionesLogEducom.setValue("fechaCreacion", hoy);
+        this.accionesLogEducom.setValue("fechaActualizacion", hoy);
+        this.logEducom.setDataSet(this.accionesLogEducom); 
+        this.logEducom.insertData(); 
 	},
 	_end: 0
 });
