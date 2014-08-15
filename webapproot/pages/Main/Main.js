@@ -60,7 +60,7 @@ dojo.declare("Main", wm.Page, {
 	inscpersonaeducomLiveForm1BeginInsert: function(inSender) {
 		this.fechaCreacionEditor1.enable();
         this.tipoPagoLookup1.setDisplayValue("Diners");
-        this.descuentoEditor1.setDataValue("0");
+        this.descuentoEditor1.setDataValue("0");       
 	},
     // filter personaLiveVariable
 	inscripciones_list_personasSelect1: function(inSender, inItem) {
@@ -72,8 +72,9 @@ dojo.declare("Main", wm.Page, {
 	inscripciones_clearFilterClick: function(inSender) {
         this.inscripciones_cursos_texto.clear();
         this.inscripciones_search_people_text.clear();
-        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
-        this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
+        /*this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);*/
+        this.inscpersonaeducomLiveVariable1.filter.clearData();
         this.inscpersonaeducomLiveVariable1.update();
 	},
     // enable button described above
@@ -163,7 +164,7 @@ dojo.declare("Main", wm.Page, {
 	},
     // sometime appears a blnk space between the records in dojoGrid, maybe this script solve it!
 	educomLiveVariable1Success: function(inSender, inDeprecated) {
-		main.educomDojoGrid.setSortIndex(2);
+		//main.educomDojoGrid.setSortIndex(2);
 	},
     //onShow inscripciones inscpersonaeducomLiveVariable1 will start update
 	inscripcionesShow2: function(inSender) {
@@ -217,6 +218,14 @@ dojo.declare("Main", wm.Page, {
         this.accionesLogEducom.setValue("fechaActualizacion", hoy);
         this.logEducom.setDataSet(this.accionesLogEducom); 
         this.logEducom.insertData(); 
+	},
+	inscpersonaeducomLiveForm1BeginUpdate2: function(inSender) {
+        var hoy= new Date().getTime();
+		this.fechaActualizacionEditor1.setDataValue(hoy);
+	},
+	inscpersonaeducomLiveForm1BeginUpdate3: function(inSender) {
+		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+        this.educomLiveVariable1.update();
 	},
 	_end: 0
 });

@@ -7,13 +7,14 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Inteligencia
- *  03/18/2014 08:50:37
+ *  08/15/2014 08:00:47
  * 
  */
 public class Inteligencia {
 
     private Integer idInteligencia;
     private String inteligencia;
+    private Set<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas> aprendizajesAsignaturases = new HashSet<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas>();
     private Set<com.aprendoz_desarrollodb.data.Aprendizaje> aprendizajes = new HashSet<com.aprendoz_desarrollodb.data.Aprendizaje>();
 
     public Integer getIdInteligencia() {
@@ -30,6 +31,14 @@ public class Inteligencia {
 
     public void setInteligencia(String inteligencia) {
         this.inteligencia = inteligencia;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas> getAprendizajesAsignaturases() {
+        return aprendizajesAsignaturases;
+    }
+
+    public void setAprendizajesAsignaturases(Set<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas> aprendizajesAsignaturases) {
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
     }
 
     public Set<com.aprendoz_desarrollodb.data.Aprendizaje> getAprendizajes() {

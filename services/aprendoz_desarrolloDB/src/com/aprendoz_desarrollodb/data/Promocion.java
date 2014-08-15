@@ -5,25 +5,27 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Promocion
- *  03/18/2014 08:50:36
+ *  08/15/2014 08:00:47
  * 
  */
 public class Promocion {
 
     private Integer idPromocion;
+    private Sy sy;
+    private Persona persona;
     private Boolean aprobado;
     private Boolean autorizadoAcademico;
     private String commentcomite;
     private Boolean autorizadoFinanciera;
     private String commentfinanc;
+    private Boolean autorizadoCra;
+    private String commentCra;
     private Boolean promovido;
     private String commentaprobado;
     private String commentpromovido;
     private Float calificacion;
     private String calificacionChar;
     private Boolean autorizadoPromAnticipada;
-    private Sy sy;
-    private Persona persona;
 
     public Integer getIdPromocion() {
         return idPromocion;
@@ -31,6 +33,22 @@ public class Promocion {
 
     public void setIdPromocion(Integer idPromocion) {
         this.idPromocion = idPromocion;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Boolean getAprobado() {
@@ -71,6 +89,22 @@ public class Promocion {
 
     public void setCommentfinanc(String commentfinanc) {
         this.commentfinanc = commentfinanc;
+    }
+
+    public Boolean getAutorizadoCra() {
+        return autorizadoCra;
+    }
+
+    public void setAutorizadoCra(Boolean autorizadoCra) {
+        this.autorizadoCra = autorizadoCra;
+    }
+
+    public String getCommentCra() {
+        return commentCra;
+    }
+
+    public void setCommentCra(String commentCra) {
+        this.commentCra = commentCra;
     }
 
     public Boolean getPromovido() {
@@ -119,22 +153,6 @@ public class Promocion {
 
     public void setAutorizadoPromAnticipada(Boolean autorizadoPromAnticipada) {
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
 }

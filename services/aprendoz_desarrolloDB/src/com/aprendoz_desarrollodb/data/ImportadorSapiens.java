@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.ImportadorSapiens
- *  03/18/2014 08:50:36
+ *  08/15/2014 08:00:46
  * 
  */
 public class ImportadorSapiens {

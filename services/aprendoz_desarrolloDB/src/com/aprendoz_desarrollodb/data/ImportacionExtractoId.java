@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.ImportacionExtractoId
- *  03/18/2014 08:50:36
+ *  08/15/2014 08:00:47
  * 
  */
 public class ImportacionExtractoId

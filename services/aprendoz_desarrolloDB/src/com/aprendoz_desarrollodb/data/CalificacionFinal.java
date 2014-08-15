@@ -6,18 +6,18 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.CalificacionFinal
- *  03/18/2014 08:50:37
+ *  08/15/2014 08:00:46
  * 
  */
 public class CalificacionFinal {
 
     private Integer idCalificacionFinal;
+    private Persona persona;
+    private Aprendizaje aprendizaje;
     private Float calificacionNum;
     private String calificacion;
     private Integer idSyIdIdSy;
     private Date fechaLogro;
-    private Persona persona;
-    private Aprendizaje aprendizaje;
 
     public Integer getIdCalificacionFinal() {
         return idCalificacionFinal;
@@ -25,6 +25,22 @@ public class CalificacionFinal {
 
     public void setIdCalificacionFinal(Integer idCalificacionFinal) {
         this.idCalificacionFinal = idCalificacionFinal;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Aprendizaje getAprendizaje() {
+        return aprendizaje;
+    }
+
+    public void setAprendizaje(Aprendizaje aprendizaje) {
+        this.aprendizaje = aprendizaje;
     }
 
     public Float getCalificacionNum() {
@@ -57,22 +73,6 @@ public class CalificacionFinal {
 
     public void setFechaLogro(Date fechaLogro) {
         this.fechaLogro = fechaLogro;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Aprendizaje getAprendizaje() {
-        return aprendizaje;
-    }
-
-    public void setAprendizaje(Aprendizaje aprendizaje) {
-        this.aprendizaje = aprendizaje;
     }
 
 }

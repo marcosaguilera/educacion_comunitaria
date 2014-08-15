@@ -15,7 +15,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_desarrolloDB"
- *  03/18/2014 14:40:23
+ *  08/15/2014 08:10:58
  * 
  */
 @SuppressWarnings("unchecked")
@@ -28,6 +28,15 @@ public class Aprendoz_desarrolloDB
 
     public List<GetPeopleInfoCombinedRtnType> getPeopleInfoCombined(String search, PagingOptions pagingOptions) {
         return ((List<GetPeopleInfoCombinedRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_desarrolloDBConstants.getPeopleInfoCombinedQueryName), search, pagingOptions));
+    }
+
+    public com.aprendoz_desarrollodb.data.Recurso getRecursoById(Integer id, PagingOptions pagingOptions) {
+        List<com.aprendoz_desarrollodb.data.Recurso> rtn = ((List<com.aprendoz_desarrollodb.data.Recurso> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_desarrolloDBConstants.getRecursoByIdQueryName), id, pagingOptions));
+        if (rtn.isEmpty()) {
+            return null;
+        } else {
+            return rtn.get(0);
+        }
     }
 
     public com.aprendoz_desarrollodb.data.TipoPersona getTipoPersonaById(Integer id, PagingOptions pagingOptions) {

@@ -6,19 +6,20 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.InscAlumAprendizaje
- *  03/18/2014 08:50:37
+ *  08/15/2014 08:00:46
  * 
  */
 public class InscAlumAprendizaje {
 
     private Integer idInscAlumAprendizaje;
+    private Persona persona;
+    private Aprendizaje aprendizaje;
     private Date fechaLogro;
     private String calificacion;
     private Float calificacionNum;
     private String comentario;
     private Date fechaIngreso;
-    private Persona persona;
-    private Aprendizaje aprendizaje;
+    private String usuario;
 
     public Integer getIdInscAlumAprendizaje() {
         return idInscAlumAprendizaje;
@@ -26,6 +27,22 @@ public class InscAlumAprendizaje {
 
     public void setIdInscAlumAprendizaje(Integer idInscAlumAprendizaje) {
         this.idInscAlumAprendizaje = idInscAlumAprendizaje;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Aprendizaje getAprendizaje() {
+        return aprendizaje;
+    }
+
+    public void setAprendizaje(Aprendizaje aprendizaje) {
+        this.aprendizaje = aprendizaje;
     }
 
     public Date getFechaLogro() {
@@ -68,20 +85,12 @@ public class InscAlumAprendizaje {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Persona getPersona() {
-        return persona;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Aprendizaje getAprendizaje() {
-        return aprendizaje;
-    }
-
-    public void setAprendizaje(Aprendizaje aprendizaje) {
-        this.aprendizaje = aprendizaje;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
 }

@@ -44,5 +44,17 @@
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.InscAlumAsig"/>
         </set>
+        <set name="inscCursoAsigCopies" inverse="true" cascade="">
+            <key>
+                <column name="Periodo_Id_Periodo" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.InscCursoAsigCopy"/>
+        </set>
+        <set name="inscAlumAsigCopy3s" inverse="true" cascade="">
+            <key>
+                <column name="Periodo_Id_Periodo" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.InscAlumAsigCopy3"/>
+        </set>
     </class>
 </hibernate-mapping>

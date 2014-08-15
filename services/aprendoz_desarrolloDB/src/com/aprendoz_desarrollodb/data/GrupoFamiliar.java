@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.GrupoFamiliar
- *  03/18/2014 08:50:37
+ *  08/15/2014 08:00:46
  * 
  */
 public class GrupoFamiliar {
@@ -16,8 +16,11 @@ public class GrupoFamiliar {
     private String grupoFamiliar;
     private String grupoLdap;
     private Set<com.aprendoz_desarrollodb.data.TransporteRutas> transporteRutases = new HashSet<com.aprendoz_desarrollodb.data.TransporteRutas>();
+    private Set<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies = new HashSet<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliarCopy>();
+    private Set<com.aprendoz_desarrollodb.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_desarrollodb.data.PersonaCopy>();
     private Set<com.aprendoz_desarrollodb.data.Persona> personas = new HashSet<com.aprendoz_desarrollodb.data.Persona>();
     private Set<com.aprendoz_desarrollodb.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars = new HashSet<com.aprendoz_desarrollodb.data.InscPersonaGrupoFamiliar>();
+    private Set<com.aprendoz_desarrollodb.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars = new HashSet<com.aprendoz_desarrollodb.data.GestionEncuestasGrupoFamiliar>();
     private Set<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliar> actualizacionGrupoFamiliars = new HashSet<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliar>();
 
     public Integer getIdGrupoFamiliar() {
@@ -52,6 +55,22 @@ public class GrupoFamiliar {
         this.transporteRutases = transporteRutases;
     }
 
+    public Set<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliarCopy> getActualizacionGrupoFamiliarCopies() {
+        return actualizacionGrupoFamiliarCopies;
+    }
+
+    public void setActualizacionGrupoFamiliarCopies(Set<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliarCopy> actualizacionGrupoFamiliarCopies) {
+        this.actualizacionGrupoFamiliarCopies = actualizacionGrupoFamiliarCopies;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.PersonaCopy> getPersonaCopies() {
+        return personaCopies;
+    }
+
+    public void setPersonaCopies(Set<com.aprendoz_desarrollodb.data.PersonaCopy> personaCopies) {
+        this.personaCopies = personaCopies;
+    }
+
     public Set<com.aprendoz_desarrollodb.data.Persona> getPersonas() {
         return personas;
     }
@@ -66,6 +85,14 @@ public class GrupoFamiliar {
 
     public void setInscPersonaGrupoFamiliars(Set<com.aprendoz_desarrollodb.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars) {
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.GestionEncuestasGrupoFamiliar> getGestionEncuestasGrupoFamiliars() {
+        return gestionEncuestasGrupoFamiliars;
+    }
+
+    public void setGestionEncuestasGrupoFamiliars(Set<com.aprendoz_desarrollodb.data.GestionEncuestasGrupoFamiliar> gestionEncuestasGrupoFamiliars) {
+        this.gestionEncuestasGrupoFamiliars = gestionEncuestasGrupoFamiliars;
     }
 
     public Set<com.aprendoz_desarrollodb.data.ActualizacionGrupoFamiliar> getActualizacionGrupoFamiliars() {
