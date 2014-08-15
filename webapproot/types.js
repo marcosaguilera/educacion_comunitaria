@@ -14466,190 +14466,6 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_desarrolloDB"
 		},
-		"com.aprendoz_desarrollodb.data.PadresVistaPersonasPromocion": {
-			"fields": {
-				"id": {
-					"exclude": [],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "com.aprendoz_desarrollodb.data.PadresVistaPersonasPromocionId"
-				}
-			},
-			"internal": false,
-			"liveService": true,
-			"service": "aprendoz_desarrolloDB"
-		},
-		"com.aprendoz_desarrollodb.data.PadresVistaPersonasPromocionId": {
-			"fields": {
-				"apellido1": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"apellido2": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"aprobado": {
-					"exclude": [],
-					"fieldOrder": 12,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"autorizadoAcademico": {
-					"exclude": [],
-					"fieldOrder": 11,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"autorizadoCra": {
-					"exclude": [],
-					"fieldOrder": 15,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"autorizadoFinanciera": {
-					"exclude": [],
-					"fieldOrder": 10,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"codigo": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"grupoFamiliar": {
-					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"grupoFamiliarIdGrupoFamiliar": {
-					"exclude": [],
-					"fieldOrder": 6,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"idGrupoFamiliar": {
-					"exclude": [],
-					"fieldOrder": 8,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"idPersona": {
-					"exclude": [],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"nombre1": {
-					"exclude": [],
-					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"nombre2": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"promovido": {
-					"exclude": [],
-					"fieldOrder": 13,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Boolean"
-				},
-				"syIdSy": {
-					"exclude": [],
-					"fieldOrder": 14,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				},
-				"tipoPersonaIdTipoPersona": {
-					"exclude": [],
-					"fieldOrder": 9,
-					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
-					"isList": false,
-					"noChange": ["delete", "read", "update"],
-					"required": true,
-					"type": "java.lang.Integer"
-				}
-			},
-			"internal": false,
-			"liveService": false,
-			"service": "aprendoz_desarrolloDB"
-		},
 		"com.aprendoz_desarrollodb.data.PadresVistaRecursos": {
 			"fields": {
 				"id": {
@@ -24390,6 +24206,100 @@ wm.types = {
 					"type": "java.lang.Integer"
 				},
 				"nombreCompleto": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_desarrolloDB"
+		},
+		"com.aprendoz_desarrollodb.data.output.GetterOneRtnType": {
+			"fields": {
+				"c2": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"c3": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"idsy": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"sy": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_desarrolloDB"
+		},
+		"com.aprendoz_desarrollodb.data.output.GetterSyRtnType": {
+			"fields": {
+				"c2": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"c3": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"idsy": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"sy": {
 					"exclude": [],
 					"fieldOrder": 1,
 					"fieldSubType": null,

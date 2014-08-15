@@ -1,8 +1,11 @@
 
 package com.aprendoz_desarrollodb;
 
+import java.util.Date;
 import java.util.List;
 import com.aprendoz_desarrollodb.data.output.GetPeopleInfoCombinedRtnType;
+import com.aprendoz_desarrollodb.data.output.GetterOneRtnType;
+import com.aprendoz_desarrollodb.data.output.GetterSyRtnType;
 import com.wavemaker.json.type.TypeDefinition;
 import com.wavemaker.runtime.data.DataServiceManager;
 import com.wavemaker.runtime.data.DataServiceManagerAccess;
@@ -15,7 +18,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_desarrolloDB"
- *  08/15/2014 08:10:58
+ *  08/15/2014 12:46:45
  * 
  */
 @SuppressWarnings("unchecked")
@@ -46,6 +49,14 @@ public class Aprendoz_desarrolloDB
         } else {
             return rtn.get(0);
         }
+    }
+
+    public List<GetterOneRtnType> getterOne(Date f1, PagingOptions pagingOptions) {
+        return ((List<GetterOneRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_desarrolloDBConstants.getterOneQueryName), f1, pagingOptions));
+    }
+
+    public List<GetterSyRtnType> getterSy(Date f1, PagingOptions pagingOptions) {
+        return ((List<GetterSyRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_desarrolloDBConstants.getterSyQueryName), f1, pagingOptions));
     }
 
     public Object insert(Object o) {

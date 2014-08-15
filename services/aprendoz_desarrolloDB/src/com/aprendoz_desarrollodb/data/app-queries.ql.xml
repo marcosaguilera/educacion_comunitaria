@@ -31,11 +31,31 @@ CONCAT(p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;
 CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;
     </query>
-    <query name="getTipoPersonaById" 
-    	   comment="Example HQL Query
+    <query
+        name="getTipoPersonaById"
+        comment="Example HQL Query
                  @design.generated">
         <query-param name="id" type="java.lang.Integer"/>
         from TipoPersona _a where _a.id=:id
-        
+    </query>
+    <query name="getterOne">
+        <query-param name="f1" type="java.util.Date"/>
+        SELECT
+sy.idSy as idsy,
+sy.schoolYear as sy,
+DATE(sy.fechaDesde),
+DATE(sy.fechaHasta)
+FROM Sy sy
+WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
+    </query>
+    <query name="getterSy">
+        <query-param name="f1" type="java.util.Date"/>
+        SELECT
+sy.idSy as idsy,
+sy.schoolYear as sy,
+DATE(sy.fechaDesde),
+DATE(sy.fechaHasta)
+FROM Sy sy
+WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
     </query>
 </hibernate-mapping>
