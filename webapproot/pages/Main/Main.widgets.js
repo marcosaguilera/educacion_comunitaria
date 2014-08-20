@@ -27,7 +27,7 @@ Main.widgets = {
 {"caption":"TipoCosto","sortable":true,"dataIndex":"tipoCosto","type":"java.lang.String","displayType":"Text","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null}
 ]}, {}]
 	}],
-	educomLiveVariable1: ["wm.LiveVariable", {"autoUpdate":false,"ignoreCase":true,"matchMode":"anywhere","maxResults":100,"orderBy":"asc: costos.nombreProducto","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.Educom"}, {"onSuccess":"educomLiveVariable1Success"}, {
+	educomLiveVariable1: ["wm.LiveVariable", {"autoUpdate":false,"ignoreCase":true,"matchMode":"anywhere","maxResults":100,"orderBy":"asc: costos.nombreProducto","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.Educom"}, {"onSuccess":"educomLiveVariable1Success","onSuccess1":"educomLiveVariable1Success1"}, {
 		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.Educom","related":["sy","costos"],"view":[
 {"caption":"IdEducom","sortable":true,"dataIndex":"idEducom","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":1000,"subType":null,"widthUnits":"px"},
 {"caption":"ActivoRetirado","sortable":true,"dataIndex":"activoRetirado","type":"java.lang.Boolean","displayType":"CheckBox","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":1001,"subType":null,"widthUnits":"px"},

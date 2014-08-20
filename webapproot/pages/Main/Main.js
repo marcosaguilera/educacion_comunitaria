@@ -240,5 +240,8 @@ dojo.declare("Main", wm.Page, {
 	inscpersonaeducomLiveVariable1Success: function(inSender, inDeprecated) {
 		this.inscpersonaeducomDojoGrid.setSortIndex(4);
 	},
+	educomLiveVariable1Success1: function(inSender, inDeprecated) {
+		this.educomDojoGrid.setSortIndex(2);
+	},
 	_end: 0
 });
