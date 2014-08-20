@@ -8,17 +8,17 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.AccStudentCard
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class AccStudentCard {
 
     private Integer id;
-    private Persona persona;
     private String cardCodeData;
     private String cardNumber;
     private Date created;
     private Date updated;
+    private Persona persona;
     private Set<com.aprendoz_desarrollodb.data.AccStudentCardAuthorization> accStudentCardAuthorizations = new HashSet<com.aprendoz_desarrollodb.data.AccStudentCardAuthorization>();
 
     public Integer getId() {
@@ -27,14 +27,6 @@ public class AccStudentCard {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public String getCardCodeData() {
@@ -67,6 +59,14 @@ public class AccStudentCard {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Set<com.aprendoz_desarrollodb.data.AccStudentCardAuthorization> getAccStudentCardAuthorizations() {

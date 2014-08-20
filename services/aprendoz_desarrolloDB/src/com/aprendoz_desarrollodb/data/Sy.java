@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Sy
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:44
  * 
  */
 public class Sy {
@@ -31,7 +31,6 @@ public class Sy {
     private Set<com.aprendoz_desarrollodb.data.Periodo> periodos = new HashSet<com.aprendoz_desarrollodb.data.Periodo>();
     private Set<com.aprendoz_desarrollodb.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_desarrollodb.data.CostosAnualesCopy>();
     private Set<com.aprendoz_desarrollodb.data.Asignatura> asignaturas = new HashSet<com.aprendoz_desarrollodb.data.Asignatura>();
-    private Set<com.aprendoz_desarrollodb.data.Educom> educoms = new HashSet<com.aprendoz_desarrollodb.data.Educom>();
     private Set<com.aprendoz_desarrollodb.data.Coordinadores> coordinadoreses = new HashSet<com.aprendoz_desarrollodb.data.Coordinadores>();
     private Set<com.aprendoz_desarrollodb.data.Costos> costoses = new HashSet<com.aprendoz_desarrollodb.data.Costos>();
     private Set<com.aprendoz_desarrollodb.data.Matricula> matriculas = new HashSet<com.aprendoz_desarrollodb.data.Matricula>();
@@ -40,6 +39,7 @@ public class Sy {
     private Set<com.aprendoz_desarrollodb.data.Coordinacion> coordinacions = new HashSet<com.aprendoz_desarrollodb.data.Coordinacion>();
     private Set<com.aprendoz_desarrollodb.data.CostosAnuales> costosAnualeses = new HashSet<com.aprendoz_desarrollodb.data.CostosAnuales>();
     private Set<com.aprendoz_desarrollodb.data.PromocionCopy> promocionCopies = new HashSet<com.aprendoz_desarrollodb.data.PromocionCopy>();
+    private Set<com.aprendoz_desarrollodb.data.Educom> educoms = new HashSet<com.aprendoz_desarrollodb.data.Educom>();
 
     public Integer getIdSy() {
         return idSy;
@@ -185,14 +185,6 @@ public class Sy {
         this.asignaturas = asignaturas;
     }
 
-    public Set<com.aprendoz_desarrollodb.data.Educom> getEducoms() {
-        return educoms;
-    }
-
-    public void setEducoms(Set<com.aprendoz_desarrollodb.data.Educom> educoms) {
-        this.educoms = educoms;
-    }
-
     public Set<com.aprendoz_desarrollodb.data.Coordinadores> getCoordinadoreses() {
         return coordinadoreses;
     }
@@ -255,6 +247,14 @@ public class Sy {
 
     public void setPromocionCopies(Set<com.aprendoz_desarrollodb.data.PromocionCopy> promocionCopies) {
         this.promocionCopies = promocionCopies;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.Educom> getEducoms() {
+        return educoms;
+    }
+
+    public void setEducoms(Set<com.aprendoz_desarrollodb.data.Educom> educoms) {
+        this.educoms = educoms;
     }
 
 }

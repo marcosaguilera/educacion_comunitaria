@@ -1,20 +1,24 @@
 dojo.declare("Main", wm.Page, {
 	start: function() {
-		
+		var now= new Date().getTime();
+        this.getSybyDate.input.setValue("f1", now);
+        this.getSybyDate.update();
 	},
 	"preferredDevice": "desktop",
 
 	costosLiveForm1BeginInsert: function(inSender) {
 	    this.gradoLookup1.setDisplayValue("EDUCACIÓN COMUNITARIA");
-        this.syLookup2.setDisplayValue("2013-2014");
+        this.syLookup2.setDisplayValue("2014-2015");
         this.lsTipoCosto.update();
 	},
 	educomLiveForm1BeginUpdate: function(inSender) {
         var count= main.global_ls_costos.getCount();
+        var sy= main.getSybyDate.getItem(0).data.idsy;        
         var tipo= 2;
         console.log(count);
-        if(count===0){
-           main.global_ls_costos.filter.setValue("tipoCosto", tipo);
+        if(count === 0){
+           main.global_ls_costos.filter.setValue("tipoCosto", 2);
+           main.global_ls_costos.filter.setValue("sy.idSy", 5);
            this.global_ls_costos.update(); 
         }else{/*nothing to do*/}
         main.costoslookup1.setReadonly(true);
@@ -22,11 +26,13 @@ dojo.declare("Main", wm.Page, {
 	},
 	educomLiveForm1BeginInsert: function(inSender) {
 		var count= main.global_ls_costos.getCount();
+        var sy= main.getSybyDate.getItem(0).data.idsy;
         var tipo= 2;
         console.log(count);
         if(count === 0){
            main.global_ls_costos.filter.setValue("tipoCosto", tipo);
-           this.global_ls_costos.update(); 
+           main.global_ls_costos.filter.setValue("sy.idSy", sy);
+           this.global_ls_costos.update();  
         }else{
             //nothing to do
         }
@@ -45,6 +51,7 @@ dojo.declare("Main", wm.Page, {
         }else{
             //nothing to do
         }
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
         this.inscpersonaeducomLiveVariable1.update();
 	},
     // filter Persona by id into lookup in form
@@ -74,7 +81,9 @@ dojo.declare("Main", wm.Page, {
         this.inscripciones_search_people_text.clear();
         /*this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
         this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);*/
-        this.inscpersonaeducomLiveVariable1.filter.clearData();
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
+        //this.inscpersonaeducomLiveVariable1.filter.clearData();
         this.inscpersonaeducomLiveVariable1.update();
 	},
     // enable button described above
@@ -167,12 +176,13 @@ dojo.declare("Main", wm.Page, {
 		//main.educomDojoGrid.setSortIndex(2);
 	},
     //onShow inscripciones inscpersonaeducomLiveVariable1 will start update
-	inscripcionesShow2: function(inSender) {
-        this.inscpersonaeducomLiveVariable1.update();
+	inscripcionesShow2: function(inSender) {       
+        //this.inscpersonaeducomLiveVariable1.update();
 	},
     //when the insert begining the list of curses will filter by the active 
 	inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
 		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+        this.educomLiveVariable1.filter.setValue("sy.idSy", 5);
         this.educomLiveVariable1.update();
 	},
 	inscpersonaeducomLiveForm1InsertData1: function(inSender) {
@@ -226,6 +236,9 @@ dojo.declare("Main", wm.Page, {
 	inscpersonaeducomLiveForm1BeginUpdate3: function(inSender) {
 		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
         this.educomLiveVariable1.update();
+	},
+	inscpersonaeducomLiveVariable1Success: function(inSender, inDeprecated) {
+		this.inscpersonaeducomDojoGrid.setSortIndex(4);
 	},
 	_end: 0
 });

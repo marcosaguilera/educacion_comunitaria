@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.CortesAnuales
- *  08/15/2014 08:00:47
+ *  08/20/2014 07:29:45
  * 
  */
 public class CortesAnuales {

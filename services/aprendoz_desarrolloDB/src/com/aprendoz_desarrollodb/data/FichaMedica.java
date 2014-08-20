@@ -6,13 +6,12 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.FichaMedica
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class FichaMedica {
 
     private Integer idfichaMedica;
-    private Persona persona;
     private Date fechaCreacion;
     private String medicoTratante;
     private String alergias;
@@ -21,6 +20,7 @@ public class FichaMedica {
     private String medicamentosActualidad;
     private String medicamentosAlerta;
     private String recomendacionesEspeciales;
+    private Persona persona;
 
     public Integer getIdfichaMedica() {
         return idfichaMedica;
@@ -28,14 +28,6 @@ public class FichaMedica {
 
     public void setIdfichaMedica(Integer idfichaMedica) {
         this.idfichaMedica = idfichaMedica;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Date getFechaCreacion() {
@@ -100,6 +92,14 @@ public class FichaMedica {
 
     public void setRecomendacionesEspeciales(String recomendacionesEspeciales) {
         this.recomendacionesEspeciales = recomendacionesEspeciales;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

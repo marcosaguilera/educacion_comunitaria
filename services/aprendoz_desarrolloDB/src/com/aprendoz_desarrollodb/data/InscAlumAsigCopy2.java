@@ -6,20 +6,20 @@ import java.math.BigDecimal;
 
 /**
  *  aprendoz_desarrolloDB.InscAlumAsigCopy2
- *  08/15/2014 08:00:47
+ *  08/20/2014 07:29:45
  * 
  */
 public class InscAlumAsigCopy2 {
 
     private Integer idInscAlumAsig;
-    private Asignatura asignatura;
-    private Persona persona;
-    private Periodo periodo;
     private BigDecimal calificacion;
     private BigDecimal porcentaje;
     private Integer esperados;
     private Integer logrados;
     private String califChar;
+    private Asignatura asignatura;
+    private Persona persona;
+    private Periodo periodo;
 
     public Integer getIdInscAlumAsig() {
         return idInscAlumAsig;
@@ -27,30 +27,6 @@ public class InscAlumAsigCopy2 {
 
     public void setIdInscAlumAsig(Integer idInscAlumAsig) {
         this.idInscAlumAsig = idInscAlumAsig;
-    }
-
-    public Asignatura getAsignatura() {
-        return asignatura;
-    }
-
-    public void setAsignatura(Asignatura asignatura) {
-        this.asignatura = asignatura;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Periodo getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(Periodo periodo) {
-        this.periodo = periodo;
     }
 
     public BigDecimal getCalificacion() {
@@ -91,6 +67,30 @@ public class InscAlumAsigCopy2 {
 
     public void setCalifChar(String califChar) {
         this.califChar = califChar;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
     }
 
 }

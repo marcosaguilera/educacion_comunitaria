@@ -5,14 +5,12 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.PromocionCopy
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class PromocionCopy {
 
     private Integer idPromocion;
-    private Sy sy;
-    private Persona persona;
     private Boolean aprobado;
     private Boolean autorizadoAcademico;
     private String commentcomite;
@@ -24,6 +22,8 @@ public class PromocionCopy {
     private Float calificacion;
     private String calificacionChar;
     private Boolean autorizadoPromAnticipada;
+    private Sy sy;
+    private Persona persona;
 
     public Integer getIdPromocion() {
         return idPromocion;
@@ -31,22 +31,6 @@ public class PromocionCopy {
 
     public void setIdPromocion(Integer idPromocion) {
         this.idPromocion = idPromocion;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Boolean getAprobado() {
@@ -135,6 +119,22 @@ public class PromocionCopy {
 
     public void setAutorizadoPromAnticipada(Boolean autorizadoPromAnticipada) {
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

@@ -5,16 +5,16 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.InscCoordinadoresCurso
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class InscCoordinadoresCurso {
 
     private Integer idInscCoordinadoresCurso;
+    private String grupo;
     private Curso curso;
     private Sy sy;
     private Persona persona;
-    private String grupo;
 
     public Integer getIdInscCoordinadoresCurso() {
         return idInscCoordinadoresCurso;
@@ -22,6 +22,14 @@ public class InscCoordinadoresCurso {
 
     public void setIdInscCoordinadoresCurso(Integer idInscCoordinadoresCurso) {
         this.idInscCoordinadoresCurso = idInscCoordinadoresCurso;
+    }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
     }
 
     public Curso getCurso() {
@@ -46,14 +54,6 @@ public class InscCoordinadoresCurso {
 
     public void setPersona(Persona persona) {
         this.persona = persona;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
     }
 
 }

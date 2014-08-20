@@ -8,14 +8,12 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Educom
- *  08/15/2014 08:00:47
+ *  08/20/2014 07:29:45
  * 
  */
 public class Educom {
 
     private Integer idEducom;
-    private Sy sy;
-    private Costos costos;
     private Boolean activoRetirado;
     private Integer edadRequeridadFinal;
     private Integer edadRequeridaInicial;
@@ -24,25 +22,25 @@ public class Educom {
     private Date fechaFin;
     private Integer cupoMinimo;
     private Integer cupoMaximo;
-    private Byte lunes;
+    private Boolean lunes;
     private Date hora1Lunes;
     private Date hora2Lunes;
-    private Byte martes;
+    private Boolean martes;
     private Date hora1Martes;
     private Date hora2Martes;
-    private Byte miercoles;
+    private Boolean miercoles;
     private Date hora1Miercoles;
     private Date hora2Miercoles;
-    private Byte jueves;
+    private Boolean jueves;
     private Date hora1Jueves;
     private Date hora2Jueves;
-    private Byte viernes;
+    private Boolean viernes;
     private Date hora1Viernes;
     private Date hora2Viernes;
-    private Byte sabado;
+    private Boolean sabado;
     private Date hora1Sabado;
     private Date hora2Sabado;
-    private Byte domingo;
+    private Boolean domingo;
     private Date hora1Domingo;
     private Date hora2Domingo;
     private Integer profesor1;
@@ -56,6 +54,8 @@ public class Educom {
     private Double costoTransporte;
     private String descripcion;
     private String tipoEducom;
+    private Sy sy;
+    private Costos costos;
     private Set<com.aprendoz_desarrollodb.data.InscPersonaEduCom> inscPersonaEduComs = new HashSet<com.aprendoz_desarrollodb.data.InscPersonaEduCom>();
 
     public Integer getIdEducom() {
@@ -64,22 +64,6 @@ public class Educom {
 
     public void setIdEducom(Integer idEducom) {
         this.idEducom = idEducom;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Costos getCostos() {
-        return costos;
-    }
-
-    public void setCostos(Costos costos) {
-        this.costos = costos;
     }
 
     public Boolean getActivoRetirado() {
@@ -146,11 +130,11 @@ public class Educom {
         this.cupoMaximo = cupoMaximo;
     }
 
-    public Byte getLunes() {
+    public Boolean getLunes() {
         return lunes;
     }
 
-    public void setLunes(Byte lunes) {
+    public void setLunes(Boolean lunes) {
         this.lunes = lunes;
     }
 
@@ -170,11 +154,11 @@ public class Educom {
         this.hora2Lunes = hora2Lunes;
     }
 
-    public Byte getMartes() {
+    public Boolean getMartes() {
         return martes;
     }
 
-    public void setMartes(Byte martes) {
+    public void setMartes(Boolean martes) {
         this.martes = martes;
     }
 
@@ -194,11 +178,11 @@ public class Educom {
         this.hora2Martes = hora2Martes;
     }
 
-    public Byte getMiercoles() {
+    public Boolean getMiercoles() {
         return miercoles;
     }
 
-    public void setMiercoles(Byte miercoles) {
+    public void setMiercoles(Boolean miercoles) {
         this.miercoles = miercoles;
     }
 
@@ -218,11 +202,11 @@ public class Educom {
         this.hora2Miercoles = hora2Miercoles;
     }
 
-    public Byte getJueves() {
+    public Boolean getJueves() {
         return jueves;
     }
 
-    public void setJueves(Byte jueves) {
+    public void setJueves(Boolean jueves) {
         this.jueves = jueves;
     }
 
@@ -242,11 +226,11 @@ public class Educom {
         this.hora2Jueves = hora2Jueves;
     }
 
-    public Byte getViernes() {
+    public Boolean getViernes() {
         return viernes;
     }
 
-    public void setViernes(Byte viernes) {
+    public void setViernes(Boolean viernes) {
         this.viernes = viernes;
     }
 
@@ -266,11 +250,11 @@ public class Educom {
         this.hora2Viernes = hora2Viernes;
     }
 
-    public Byte getSabado() {
+    public Boolean getSabado() {
         return sabado;
     }
 
-    public void setSabado(Byte sabado) {
+    public void setSabado(Boolean sabado) {
         this.sabado = sabado;
     }
 
@@ -290,11 +274,11 @@ public class Educom {
         this.hora2Sabado = hora2Sabado;
     }
 
-    public Byte getDomingo() {
+    public Boolean getDomingo() {
         return domingo;
     }
 
-    public void setDomingo(Byte domingo) {
+    public void setDomingo(Boolean domingo) {
         this.domingo = domingo;
     }
 
@@ -400,6 +384,22 @@ public class Educom {
 
     public void setTipoEducom(String tipoEducom) {
         this.tipoEducom = tipoEducom;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Costos getCostos() {
+        return costos;
+    }
+
+    public void setCostos(Costos costos) {
+        this.costos = costos;
     }
 
     public Set<com.aprendoz_desarrollodb.data.InscPersonaEduCom> getInscPersonaEduComs() {

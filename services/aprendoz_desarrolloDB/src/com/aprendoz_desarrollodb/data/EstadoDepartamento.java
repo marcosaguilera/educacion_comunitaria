@@ -5,14 +5,14 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.EstadoDepartamento
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class EstadoDepartamento {
 
     private Integer idEstados;
-    private Pais pais;
     private String estado;
+    private Pais pais;
 
     public Integer getIdEstados() {
         return idEstados;
@@ -22,20 +22,20 @@ public class EstadoDepartamento {
         this.idEstados = idEstados;
     }
 
-    public Pais getPais() {
-        return pais;
-    }
-
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
-
     public String getEstado() {
         return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 
 }

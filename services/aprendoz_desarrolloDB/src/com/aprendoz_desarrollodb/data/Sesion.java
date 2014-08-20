@@ -8,20 +8,20 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Sesion
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class Sesion {
 
     private Integer idSesion;
-    private Curso curso;
-    private Asignatura asignatura;
     private Date fecha;
     private Integer numeroSesion;
     private Boolean impartida;
     private String comentario;
     private Date horaInicio;
     private Date horaFin;
+    private Curso curso;
+    private Asignatura asignatura;
     private Set<com.aprendoz_desarrollodb.data.Asistencia> asistencias = new HashSet<com.aprendoz_desarrollodb.data.Asistencia>();
 
     public Integer getIdSesion() {
@@ -30,22 +30,6 @@ public class Sesion {
 
     public void setIdSesion(Integer idSesion) {
         this.idSesion = idSesion;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public Asignatura getAsignatura() {
-        return asignatura;
-    }
-
-    public void setAsignatura(Asignatura asignatura) {
-        this.asignatura = asignatura;
     }
 
     public Date getFecha() {
@@ -94,6 +78,22 @@ public class Sesion {
 
     public void setHoraFin(Date horaFin) {
         this.horaFin = horaFin;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
     }
 
     public Set<com.aprendoz_desarrollodb.data.Asistencia> getAsistencias() {

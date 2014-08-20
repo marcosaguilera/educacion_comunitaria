@@ -7,16 +7,16 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Grado
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:45
  * 
  */
 public class Grado {
 
     private Integer idGrado;
-    private Nivel nivel;
     private String grado;
     private String grade;
     private String gradoSapiens;
+    private Nivel nivel;
     private Set<com.aprendoz_desarrollodb.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_desarrollodb.data.CostosAnualesCopy>();
     private Set<com.aprendoz_desarrollodb.data.Asignatura> asignaturas = new HashSet<com.aprendoz_desarrollodb.data.Asignatura>();
     private Set<com.aprendoz_desarrollodb.data.Costos> costoses = new HashSet<com.aprendoz_desarrollodb.data.Costos>();
@@ -31,14 +31,6 @@ public class Grado {
 
     public void setIdGrado(Integer idGrado) {
         this.idGrado = idGrado;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
-        this.nivel = nivel;
     }
 
     public String getGrado() {
@@ -63,6 +55,14 @@ public class Grado {
 
     public void setGradoSapiens(String gradoSapiens) {
         this.gradoSapiens = gradoSapiens;
+    }
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
     }
 
     public Set<com.aprendoz_desarrollodb.data.CostosAnualesCopy> getCostosAnualesCopies() {

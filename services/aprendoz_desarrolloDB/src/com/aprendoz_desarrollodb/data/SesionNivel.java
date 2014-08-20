@@ -6,18 +6,18 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.SesionNivel
- *  08/15/2014 08:00:46
+ *  08/20/2014 07:29:44
  * 
  */
 public class SesionNivel {
 
     private Integer idSesionNivel;
-    private Nivel nivel;
-    private Sy sy;
     private Integer numeroSesion;
     private Date horaInicio;
     private Date horaFin;
     private Integer dia;
+    private Nivel nivel;
+    private Sy sy;
 
     public Integer getIdSesionNivel() {
         return idSesionNivel;
@@ -25,22 +25,6 @@ public class SesionNivel {
 
     public void setIdSesionNivel(Integer idSesionNivel) {
         this.idSesionNivel = idSesionNivel;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
-        this.nivel = nivel;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
     public Integer getNumeroSesion() {
@@ -73,6 +57,22 @@ public class SesionNivel {
 
     public void setDia(Integer dia) {
         this.dia = dia;
+    }
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
 }

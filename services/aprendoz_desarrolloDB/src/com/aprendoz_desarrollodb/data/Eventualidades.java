@@ -8,13 +8,12 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Eventualidades
- *  08/15/2014 08:00:47
+ *  08/20/2014 07:29:44
  * 
  */
 public class Eventualidades {
 
     private Integer idEventualidad;
-    private TipoLugar tipoLugar;
     private Date fecha;
     private Date hora;
     private String estado;
@@ -26,6 +25,7 @@ public class Eventualidades {
     private String pregunta3;
     private Date fechaPlanReparacion;
     private String confidencial;
+    private TipoLugar tipoLugar;
     private Set<com.aprendoz_desarrollodb.data.EventualidadPersonas> eventualidadPersonases = new HashSet<com.aprendoz_desarrollodb.data.EventualidadPersonas>();
 
     public Integer getIdEventualidad() {
@@ -34,14 +34,6 @@ public class Eventualidades {
 
     public void setIdEventualidad(Integer idEventualidad) {
         this.idEventualidad = idEventualidad;
-    }
-
-    public TipoLugar getTipoLugar() {
-        return tipoLugar;
-    }
-
-    public void setTipoLugar(TipoLugar tipoLugar) {
-        this.tipoLugar = tipoLugar;
     }
 
     public Date getFecha() {
@@ -130,6 +122,14 @@ public class Eventualidades {
 
     public void setConfidencial(String confidencial) {
         this.confidencial = confidencial;
+    }
+
+    public TipoLugar getTipoLugar() {
+        return tipoLugar;
+    }
+
+    public void setTipoLugar(TipoLugar tipoLugar) {
+        this.tipoLugar = tipoLugar;
     }
 
     public Set<com.aprendoz_desarrollodb.data.EventualidadPersonas> getEventualidadPersonases() {
