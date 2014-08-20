@@ -14,17 +14,17 @@
         <property name="fechaHasta" type="date">
             <column name="fecha_hasta" length="10"/>
         </property>
-        <set name="promocions" inverse="true" cascade="">
-            <key>
-                <column name="SY_Id_Sy" not-null="true"/>
-            </key>
-            <one-to-many class="com.aprendoz_desarrollodb.data.Promocion"/>
-        </set>
         <set name="inscAlumCostos" inverse="true" cascade="">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.InscAlumCosto"/>
+        </set>
+        <set name="promocions" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_Sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.Promocion"/>
         </set>
         <set name="inscCoordinadoresCursos" inverse="true" cascade="">
             <key>
@@ -74,11 +74,23 @@
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Horario"/>
         </set>
+        <set name="asignaturaCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.AsignaturaCopy"/>
+        </set>
         <set name="periodos" inverse="true" cascade="">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Periodo"/>
+        </set>
+        <set name="costosAnualesCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.CostosAnualesCopy"/>
         </set>
         <set name="asignaturas" inverse="true" cascade="">
             <key>
@@ -121,6 +133,18 @@
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_desarrollodb.data.Coordinacion"/>
+        </set>
+        <set name="costosAnualeses" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.CostosAnuales"/>
+        </set>
+        <set name="promocionCopies" inverse="true" cascade="">
+            <key>
+                <column name="SY_Id_Sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_desarrollodb.data.PromocionCopy"/>
         </set>
         <set name="educoms" inverse="true" cascade="">
             <key>

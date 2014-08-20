@@ -5,7 +5,7 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.ImportacionCarteraCopy
- *  03/18/2014 08:50:37
+ *  06/12/2014 19:17:19
  * 
  */
 public class ImportacionCarteraCopy {

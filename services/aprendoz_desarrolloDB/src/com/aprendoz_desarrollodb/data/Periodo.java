@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Periodo
- *  03/18/2014 08:50:36
+ *  08/20/2014 07:29:46
  * 
  */
 public class Periodo {
@@ -23,6 +23,8 @@ public class Periodo {
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2> inscAlumAsigCopy2s = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2>();
     private Set<com.aprendoz_desarrollodb.data.InscCursoAsig> inscCursoAsigs = new HashSet<com.aprendoz_desarrollodb.data.InscCursoAsig>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsig> inscAlumAsigs = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsig>();
+    private Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> inscCursoAsigCopies = new HashSet<com.aprendoz_desarrollodb.data.InscCursoAsigCopy>();
+    private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3> inscAlumAsigCopy3s = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3>();
 
     public Integer getIdPeriodo() {
         return idPeriodo;
@@ -102,6 +104,22 @@ public class Periodo {
 
     public void setInscAlumAsigs(Set<com.aprendoz_desarrollodb.data.InscAlumAsig> inscAlumAsigs) {
         this.inscAlumAsigs = inscAlumAsigs;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> getInscCursoAsigCopies() {
+        return inscCursoAsigCopies;
+    }
+
+    public void setInscCursoAsigCopies(Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> inscCursoAsigCopies) {
+        this.inscCursoAsigCopies = inscCursoAsigCopies;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3> getInscAlumAsigCopy3s() {
+        return inscAlumAsigCopy3s;
+    }
+
+    public void setInscAlumAsigCopy3s(Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3> inscAlumAsigCopy3s) {
+        this.inscAlumAsigCopy3s = inscAlumAsigCopy3s;
     }
 
 }

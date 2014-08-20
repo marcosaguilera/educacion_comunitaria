@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.InscAlumAprendizaje
- *  03/18/2014 08:50:37
+ *  08/20/2014 07:29:44
  * 
  */
 public class InscAlumAprendizaje {
@@ -17,6 +17,7 @@ public class InscAlumAprendizaje {
     private Float calificacionNum;
     private String comentario;
     private Date fechaIngreso;
+    private String usuario;
     private Persona persona;
     private Aprendizaje aprendizaje;
 
@@ -66,6 +67,14 @@ public class InscAlumAprendizaje {
 
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public Persona getPersona() {

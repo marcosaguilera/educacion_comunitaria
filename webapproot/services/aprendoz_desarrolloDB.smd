@@ -8,6 +8,14 @@
 		}],
 		"returnType": "[com.aprendoz_desarrollodb.data.output.GetPeopleInfoCombinedRtnType]"
 	}, {
+		"name": "getRecursoById",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "com.aprendoz_desarrollodb.data.Recurso"
+	}, {
 		"name": "getTipoPersonaById",
 		"operationType": "hqlquery",
 		"parameters": [{
@@ -15,6 +23,22 @@
 			"type": "java.lang.Integer"
 		}],
 		"returnType": "com.aprendoz_desarrollodb.data.TipoPersona"
+	}, {
+		"name": "getterOne",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "f1",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.aprendoz_desarrollodb.data.output.GetterOneRtnType]"
+	}, {
+		"name": "getterSy",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "f1",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.aprendoz_desarrollodb.data.output.GetterSyRtnType]"
 	}],
 	"serviceType": "JSON-RPC",
 	"serviceURL": "aprendoz_desarrolloDB.json"

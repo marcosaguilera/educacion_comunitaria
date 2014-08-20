@@ -6,12 +6,13 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.ActualizacionGrupoFamiliar
- *  03/18/2014 08:50:37
+ *  08/20/2014 07:29:45
  * 
  */
 public class ActualizacionGrupoFamiliar {
 
     private Integer idActualizacionGrupoFamiliar;
+    private Date fechaCreacion;
     private Date fecha;
     private Byte actualizado;
     private GrupoFamiliar grupoFamiliar;
@@ -22,6 +23,14 @@ public class ActualizacionGrupoFamiliar {
 
     public void setIdActualizacionGrupoFamiliar(Integer idActualizacionGrupoFamiliar) {
         this.idActualizacionGrupoFamiliar = idActualizacionGrupoFamiliar;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public Date getFecha() {

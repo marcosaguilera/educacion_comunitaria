@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_desarrolloDB.VistaEventualidadesNotificacionesId
- *  03/18/2014 08:50:37
+ *  08/20/2014 07:29:44
  * 
  */
 public class VistaEventualidadesNotificacionesId

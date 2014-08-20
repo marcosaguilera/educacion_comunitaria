@@ -5,7 +5,7 @@ package com.aprendoz_desarrollodb.data;
 
 /**
  *  aprendoz_desarrolloDB.Promocion
- *  03/18/2014 08:50:36
+ *  08/20/2014 07:29:45
  * 
  */
 public class Promocion {
@@ -16,6 +16,8 @@ public class Promocion {
     private String commentcomite;
     private Boolean autorizadoFinanciera;
     private String commentfinanc;
+    private Boolean autorizadoCra;
+    private String commentCra;
     private Boolean promovido;
     private String commentaprobado;
     private String commentpromovido;
@@ -71,6 +73,22 @@ public class Promocion {
 
     public void setCommentfinanc(String commentfinanc) {
         this.commentfinanc = commentfinanc;
+    }
+
+    public Boolean getAutorizadoCra() {
+        return autorizadoCra;
+    }
+
+    public void setAutorizadoCra(Boolean autorizadoCra) {
+        this.autorizadoCra = autorizadoCra;
+    }
+
+    public String getCommentCra() {
+        return commentCra;
+    }
+
+    public void setCommentCra(String commentCra) {
+        this.commentCra = commentCra;
     }
 
     public Boolean getPromovido() {

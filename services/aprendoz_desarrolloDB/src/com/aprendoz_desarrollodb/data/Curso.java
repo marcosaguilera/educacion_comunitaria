@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Curso
- *  03/18/2014 08:50:37
+ *  08/20/2014 07:29:44
  * 
  */
 public class Curso {
@@ -23,6 +23,7 @@ public class Curso {
     private Set<com.aprendoz_desarrollodb.data.Sesion> sesions = new HashSet<com.aprendoz_desarrollodb.data.Sesion>();
     private Set<com.aprendoz_desarrollodb.data.Matricula> matriculas = new HashSet<com.aprendoz_desarrollodb.data.Matricula>();
     private Set<com.aprendoz_desarrollodb.data.Coordinacion> coordinacions = new HashSet<com.aprendoz_desarrollodb.data.Coordinacion>();
+    private Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> inscCursoAsigCopies = new HashSet<com.aprendoz_desarrollodb.data.InscCursoAsigCopy>();
     private Set<com.aprendoz_desarrollodb.data.InscCoordinadoresCurso> inscCoordinadoresCursos = new HashSet<com.aprendoz_desarrollodb.data.InscCoordinadoresCurso>();
 
     public Integer getIdCurso() {
@@ -111,6 +112,14 @@ public class Curso {
 
     public void setCoordinacions(Set<com.aprendoz_desarrollodb.data.Coordinacion> coordinacions) {
         this.coordinacions = coordinacions;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> getInscCursoAsigCopies() {
+        return inscCursoAsigCopies;
+    }
+
+    public void setInscCursoAsigCopies(Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> inscCursoAsigCopies) {
+        this.inscCursoAsigCopies = inscCursoAsigCopies;
     }
 
     public Set<com.aprendoz_desarrollodb.data.InscCoordinadoresCurso> getInscCoordinadoresCursos() {

@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.Asignatura
- *  03/18/2014 08:50:37
+ *  08/20/2014 07:29:44
  * 
  */
 public class Asignatura {
@@ -38,9 +38,12 @@ public class Asignatura {
     private Set<com.aprendoz_desarrollodb.data.InscCursoAsig> inscCursoAsigs = new HashSet<com.aprendoz_desarrollodb.data.InscCursoAsig>();
     private Set<com.aprendoz_desarrollodb.data.Horario> horarios = new HashSet<com.aprendoz_desarrollodb.data.Horario>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy> inscAlumAsigCopies = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy>();
+    private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3> inscAlumAsigCopy3s = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsig> inscAlumAsigs = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsig>();
     private Set<com.aprendoz_desarrollodb.data.Sesion> sesions = new HashSet<com.aprendoz_desarrollodb.data.Sesion>();
+    private Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> inscCursoAsigCopies = new HashSet<com.aprendoz_desarrollodb.data.InscCursoAsigCopy>();
     private Set<com.aprendoz_desarrollodb.data.Unidad> unidads = new HashSet<com.aprendoz_desarrollodb.data.Unidad>();
+    private Set<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas> aprendizajesAsignaturases = new HashSet<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas>();
     private Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2> inscAlumAsigCopy2s = new HashSet<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2>();
 
     public Integer getIdAsignatura() {
@@ -251,6 +254,14 @@ public class Asignatura {
         this.inscAlumAsigCopies = inscAlumAsigCopies;
     }
 
+    public Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3> getInscAlumAsigCopy3s() {
+        return inscAlumAsigCopy3s;
+    }
+
+    public void setInscAlumAsigCopy3s(Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy3> inscAlumAsigCopy3s) {
+        this.inscAlumAsigCopy3s = inscAlumAsigCopy3s;
+    }
+
     public Set<com.aprendoz_desarrollodb.data.InscAlumAsig> getInscAlumAsigs() {
         return inscAlumAsigs;
     }
@@ -267,12 +278,28 @@ public class Asignatura {
         this.sesions = sesions;
     }
 
+    public Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> getInscCursoAsigCopies() {
+        return inscCursoAsigCopies;
+    }
+
+    public void setInscCursoAsigCopies(Set<com.aprendoz_desarrollodb.data.InscCursoAsigCopy> inscCursoAsigCopies) {
+        this.inscCursoAsigCopies = inscCursoAsigCopies;
+    }
+
     public Set<com.aprendoz_desarrollodb.data.Unidad> getUnidads() {
         return unidads;
     }
 
     public void setUnidads(Set<com.aprendoz_desarrollodb.data.Unidad> unidads) {
         this.unidads = unidads;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas> getAprendizajesAsignaturases() {
+        return aprendizajesAsignaturases;
+    }
+
+    public void setAprendizajesAsignaturases(Set<com.aprendoz_desarrollodb.data.AprendizajesAsignaturas> aprendizajesAsignaturases) {
+        this.aprendizajesAsignaturases = aprendizajesAsignaturases;
     }
 
     public Set<com.aprendoz_desarrollodb.data.InscAlumAsigCopy2> getInscAlumAsigCopy2s() {

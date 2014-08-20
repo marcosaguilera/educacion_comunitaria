@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_desarrolloDB.TipoPersona
- *  03/18/2014 08:50:36
+ *  08/20/2014 07:29:46
  * 
  */
 public class TipoPersona {
@@ -16,6 +16,7 @@ public class TipoPersona {
     private String tipoPersona;
     private Set<com.aprendoz_desarrollodb.data.AccAuthorization> accAuthorizations = new HashSet<com.aprendoz_desarrollodb.data.AccAuthorization>();
     private Set<com.aprendoz_desarrollodb.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars = new HashSet<com.aprendoz_desarrollodb.data.InscPersonaGrupoFamiliar>();
+    private Set<com.aprendoz_desarrollodb.data.PersonaCopy> personaCopies = new HashSet<com.aprendoz_desarrollodb.data.PersonaCopy>();
     private Set<com.aprendoz_desarrollodb.data.Persona> personas = new HashSet<com.aprendoz_desarrollodb.data.Persona>();
     private Set<com.aprendoz_desarrollodb.data.ReportesTipoPersona> reportesTipoPersonas = new HashSet<com.aprendoz_desarrollodb.data.ReportesTipoPersona>();
 
@@ -49,6 +50,14 @@ public class TipoPersona {
 
     public void setInscPersonaGrupoFamiliars(Set<com.aprendoz_desarrollodb.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars) {
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
+    }
+
+    public Set<com.aprendoz_desarrollodb.data.PersonaCopy> getPersonaCopies() {
+        return personaCopies;
+    }
+
+    public void setPersonaCopies(Set<com.aprendoz_desarrollodb.data.PersonaCopy> personaCopies) {
+        this.personaCopies = personaCopies;
     }
 
     public Set<com.aprendoz_desarrollodb.data.Persona> getPersonas() {
