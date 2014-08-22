@@ -169,6 +169,7 @@ dojo.declare("Main", wm.Page, {
     // onShow inscripciones educomLiveVariable1 will start update
 	Cursos_extracurricularesShow: function(inSender) {
         this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+        this.educomLiveVariable1.filter.setValue("sy.idSy", 5);
         this.educomLiveVariable1.update();
 	},
     // sometime appears a blnk space between the records in dojoGrid, maybe this script solve it!
@@ -239,6 +240,9 @@ dojo.declare("Main", wm.Page, {
 	},
 	inscpersonaeducomLiveVariable1Success: function(inSender, inDeprecated) {
 		this.inscpersonaeducomDojoGrid.setSortIndex(4);
+	},
+	educomLiveVariable1Success1: function(inSender, inDeprecated) {
+		this.educomDojoGrid.setSortIndex(2);
 	},
 	_end: 0
 });

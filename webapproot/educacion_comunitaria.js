@@ -12,7 +12,7 @@ dojo.declare("educacion_comunitaria", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha14", 
+	"projectSubVersion": "Alpha15", 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": "nothing", 
 	"studioVersion": "6.6.0.RELEASE", 
