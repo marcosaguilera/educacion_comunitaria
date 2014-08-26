@@ -335,7 +335,7 @@ Main.widgets = {
 				idEducomEditor1: ["wm.Number", {"caption":"Id","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"idEducom","height":"30px","width":"100%"}, {}],
 				activoCheckbox4: ["wm.Checkbox", {"caption":"Activo","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"activo_retirado","height":"30px","width":"180px"}, {}],
 				panel1: ["wm.Panel", {"height":"34px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-					edadRequeridadFinalEditor1: ["wm.Number", {"caption":"Edad años","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"edadRequeridadFinal","height":"30px","placeHolder":"desde","width":"287px"}, {}],
+					edadRequeridadFinalEditor1: ["wm.Number", {"caption":"Grados","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"edadRequeridadFinal","height":"30px","placeHolder":"desde","width":"287px"}, {}],
 					edadRequeridaInicialEditor1: ["wm.Number", {"caption":undefined,"captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"edadRequeridaInicial","height":"30px","helpText":"Definida la edad mínima y máxima","placeHolder":"hasta","width":"160px"}, {}]
 				}],
 				bimestralSemestralSelectEditor: ["wm.SelectMenu", {"caption":"Periodo","captionAlign":"right","captionSize":"140px","dataField":"dataValue","dataType":"EntryData","displayField":"name","formField":"comentario","height":"30px","helpText":"Bimestral / Semestral","width":"100%"}, {}, {
@@ -678,82 +678,6 @@ Main.widgets = {
 										}]
 									}]
 								}],
-								Cursos_extracurriculares: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/cursos.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Cursos","horizontalAlign":"left","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"Cursos_extracurricularesShow"}, {
-									educomLivePanel2: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
-										binding: ["wm.Binding", {}, {}, {
-											wire: ["wm.Wire", {"source":"educomDialog","targetId":null,"targetProperty":"dialog"}, {}],
-											wire1: ["wm.Wire", {"source":"educomLiveForm1","targetId":null,"targetProperty":"liveForm"}, {}],
-											wire2: ["wm.Wire", {"source":"educomDojoGrid","targetId":null,"targetProperty":"dataGrid"}, {}],
-											wire3: ["wm.Wire", {"source":"educomSaveButton","targetId":null,"targetProperty":"saveButton"}, {}]
-										}],
-										panel7: ["wm.Panel", {"height":"37px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#cd5555"},"verticalAlign":"middle","width":"100%"}, {}, {
-											cursos_search_cursos: ["wm.Text", {"caption":undefined,"changeOnKey":true,"dataValue":undefined,"displayValue":"","height":"30px","placeHolder":"ingrese el nombre del curso","width":"300px"}, {"onchange":"educomLiveVariable1"}]
-										}],
-										educomDojoGrid: ["wm.DojoGrid", {"columns":[
-{"show":true,"field":"idEducom","title":" ","width":"50px","align":"left","formatFunc":"","mobileColumn":false},
-{"show":true,"field":"tipoEducom","title":"Tipo","width":"50px","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
-{"show":true,"field":"costos.nombreProducto","title":"Curso","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
-{"show":true,"field":"edadRequeridadFinal","title":"Grado Ini/Fin","width":"100px","align":"center","formatFunc":"","editorProps":null,"expression":"${edadRequeridadFinal}+\" / \"+${edadRequeridaInicial}","mobileColumn":false},
-{"show":false,"field":"edadRequeridaInicial","title":"Max. Edad","width":"60px","align":"left","formatFunc":"","expression":"${edadRequeridaInicial}+\" años\"","mobileColumn":false},
-{"show":true,"field":"fechaInicio","title":"Inicia","width":"80px","align":"center","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":true,"field":"fechaFin","title":"Finaliza","width":"80px","align":"center","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"cupoMinimo","title":"Mín. Cupo","width":"60px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":true,"field":"cupoMaximo","title":"Cupo Min/Max ","width":"50px","align":"right","formatFunc":"","expression":"${cupoMinimo}+\" / \"+${cupoMaximo}","mobileColumn":false},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\" : \" + ${idEducom} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Tipo: \" + ${tipoEducom}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Curso: \" + ${costos.nombreProducto}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Grado Ini/Fin: \" + ${wm.runtimeId}.formatCell(\"edadRequeridadFinal\", ${edadRequeridadFinal}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Inicia: \" + ${wm.runtimeId}.formatCell(\"fechaInicio\", ${fechaInicio}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Finaliza: \" + ${wm.runtimeId}.formatCell(\"fechaFin\", ${fechaFin}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Cupo Min/Max : \" + ${wm.runtimeId}.formatCell(\"cupoMaximo\", ${cupoMaximo}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Periodo: \" + ${sy.schoolYear}\n + \"</div>\"\n\n","mobileColumn":true},
-{"show":false,"field":"activoRetirado","title":"ActivoRetirado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"comentario","title":"Comentario","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"fechaCierreCurso","title":"FechaCierreCurso","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"valorTransporte","title":"ValorTransporte","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"tarifaAnticipado","title":"TarifaAnticipado","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"costoTransporte","title":"CostoTransporte","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"descripcion","title":"Descripcion","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"fechaAperturaCurso","title":"FechaAperturaCurso","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":true,"field":"sy.schoolYear","title":"Periodo","width":"90px","align":"center","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"lunes","title":"Lunes","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Lunes","title":"Hora1Lunes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Lunes","title":"Hora2Lunes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"martes","title":"Martes","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Martes","title":"Hora1Martes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Martes","title":"Hora2Martes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"miercoles","title":"Miercoles","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Miercoles","title":"Hora1Miercoles","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Miercoles","title":"Hora2Miercoles","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"jueves","title":"Jueves","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Jueves","title":"Hora1Jueves","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Jueves","title":"Hora2Jueves","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"viernes","title":"Viernes","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Viernes","title":"Hora1Viernes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Viernes","title":"Hora2Viernes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"sabado","title":"Sabado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Sabado","title":"Hora1Sabado","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Sabado","title":"Hora2Sabado","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"domingo","title":"Domingo","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"hora1Domingo","title":"Hora1Domingo","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"hora2Domingo","title":"Hora2Domingo","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"profesor1","title":"Profesor1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"profesor2","title":"Profesor2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"numeroHoras","title":"NumeroHoras","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"valorHonorarios","title":"ValorHonorarios","width":"80px","align":"right","formatFunc":"","mobileColumn":false}
-],"dsType":"com.aprendoz_desarrollodb.data.Educom","height":"100%","minDesktopHeight":60,"styles":{"fontSize":"10px"}}, {"onCellDblClick":"educomLivePanel2.popupLivePanelEdit"}, {
-											binding: ["wm.Binding", {}, {}, {
-												wire: ["wm.Wire", {"expression":undefined,"source":"educomLiveVariable1","targetProperty":"dataSet"}, {}]
-											}]
-										}],
-										educomGridButtonPanel: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","roles":["10"],"verticalAlign":"top","width":"100%"}, {}, {
-											educomNewButton: ["wm.Button", {"border":"1","caption":"Nuevo","height":"30px"}, {"onclick":"educomLivePanel2.popupLivePanelInsert"}],
-											educomUpdateButton: ["wm.Button", {"border":"1","caption":"Modificar","height":"30px"}, {"onclick":"educomLivePanel2.popupLivePanelEdit"}, {
-												binding: ["wm.Binding", {}, {}, {
-													wire: ["wm.Wire", {"source":"educomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
-												}]
-											}],
-											educomDeleteButton: ["wm.Button", {"border":"1","caption":"Eliminar","height":"30px"}, {"onclick":"educomLiveForm1.deleteData"}, {
-												binding: ["wm.Binding", {}, {}, {
-													wire: ["wm.Wire", {"source":"educomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
-												}]
-											}]
-										}]
-									}]
-								}],
 								Personas_abonados: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/users.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Personas","horizontalAlign":"left","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"personaLiveVariable1"}, {
 									personaLivePanel1: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
 										binding: ["wm.Binding", {}, {}, {
@@ -851,6 +775,82 @@ Main.widgets = {
 										}]
 									}]
 								}],
+								Cursos_extracurriculares: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/cursos.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Cursos","horizontalAlign":"left","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"Cursos_extracurricularesShow"}, {
+									educomLivePanel2: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+										binding: ["wm.Binding", {}, {}, {
+											wire: ["wm.Wire", {"source":"educomDialog","targetId":null,"targetProperty":"dialog"}, {}],
+											wire1: ["wm.Wire", {"source":"educomLiveForm1","targetId":null,"targetProperty":"liveForm"}, {}],
+											wire2: ["wm.Wire", {"source":"educomDojoGrid","targetId":null,"targetProperty":"dataGrid"}, {}],
+											wire3: ["wm.Wire", {"source":"educomSaveButton","targetId":null,"targetProperty":"saveButton"}, {}]
+										}],
+										panel7: ["wm.Panel", {"height":"37px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#cd5555"},"verticalAlign":"middle","width":"100%"}, {}, {
+											cursos_search_cursos: ["wm.Text", {"caption":undefined,"changeOnKey":true,"dataValue":undefined,"displayValue":"","height":"30px","placeHolder":"ingrese el nombre del curso","width":"300px"}, {"onchange":"educomLiveVariable1"}]
+										}],
+										educomDojoGrid: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"idEducom","title":" ","width":"50px","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"tipoEducom","title":"Tipo","width":"50px","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":true,"field":"costos.nombreProducto","title":"Curso","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":true,"field":"edadRequeridadFinal","title":"Grado Ini/Fin","width":"100px","align":"center","formatFunc":"","editorProps":null,"expression":"${edadRequeridadFinal}+\" / \"+${edadRequeridaInicial}","mobileColumn":false},
+{"show":false,"field":"edadRequeridaInicial","title":"Max. Edad","width":"60px","align":"left","formatFunc":"","expression":"${edadRequeridaInicial}+\" años\"","mobileColumn":false},
+{"show":true,"field":"fechaInicio","title":"Inicia","width":"80px","align":"center","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":true,"field":"fechaFin","title":"Finaliza","width":"80px","align":"center","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"cupoMinimo","title":"Mín. Cupo","width":"60px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"cupoMaximo","title":"Cupo Min/Max ","width":"50px","align":"right","formatFunc":"","expression":"${cupoMinimo}+\" / \"+${cupoMaximo}","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\" : \" + ${idEducom} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Tipo: \" + ${tipoEducom}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Curso: \" + ${costos.nombreProducto}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Grado Ini/Fin: \" + ${wm.runtimeId}.formatCell(\"edadRequeridadFinal\", ${edadRequeridadFinal}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Inicia: \" + ${wm.runtimeId}.formatCell(\"fechaInicio\", ${fechaInicio}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Finaliza: \" + ${wm.runtimeId}.formatCell(\"fechaFin\", ${fechaFin}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Cupo Min/Max : \" + ${wm.runtimeId}.formatCell(\"cupoMaximo\", ${cupoMaximo}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Periodo: \" + ${sy.schoolYear}\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":false,"field":"activoRetirado","title":"ActivoRetirado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"comentario","title":"Comentario","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"fechaCierreCurso","title":"FechaCierreCurso","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"valorTransporte","title":"ValorTransporte","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"tarifaAnticipado","title":"TarifaAnticipado","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"costoTransporte","title":"CostoTransporte","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"descripcion","title":"Descripcion","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"fechaAperturaCurso","title":"FechaAperturaCurso","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":true,"field":"sy.schoolYear","title":"Periodo","width":"90px","align":"center","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"lunes","title":"Lunes","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Lunes","title":"Hora1Lunes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Lunes","title":"Hora2Lunes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"martes","title":"Martes","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Martes","title":"Hora1Martes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Martes","title":"Hora2Martes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"miercoles","title":"Miercoles","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Miercoles","title":"Hora1Miercoles","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Miercoles","title":"Hora2Miercoles","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"jueves","title":"Jueves","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Jueves","title":"Hora1Jueves","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Jueves","title":"Hora2Jueves","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"viernes","title":"Viernes","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Viernes","title":"Hora1Viernes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Viernes","title":"Hora2Viernes","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"sabado","title":"Sabado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Sabado","title":"Hora1Sabado","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Sabado","title":"Hora2Sabado","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"domingo","title":"Domingo","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"hora1Domingo","title":"Hora1Domingo","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"hora2Domingo","title":"Hora2Domingo","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"profesor1","title":"Profesor1","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"profesor2","title":"Profesor2","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"numeroHoras","title":"NumeroHoras","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"valorHonorarios","title":"ValorHonorarios","width":"80px","align":"right","formatFunc":"","mobileColumn":false}
+],"dsType":"com.aprendoz_desarrollodb.data.Educom","height":"100%","minDesktopHeight":60,"styles":{"fontSize":"10px"}}, {"onCellDblClick":"educomLivePanel2.popupLivePanelEdit"}, {
+											binding: ["wm.Binding", {}, {}, {
+												wire: ["wm.Wire", {"expression":undefined,"source":"educomLiveVariable1","targetProperty":"dataSet"}, {}]
+											}]
+										}],
+										educomGridButtonPanel: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","roles":["10"],"verticalAlign":"top","width":"100%"}, {}, {
+											educomNewButton: ["wm.Button", {"border":"1","caption":"Nuevo","height":"30px"}, {"onclick":"educomLivePanel2.popupLivePanelInsert"}],
+											educomUpdateButton: ["wm.Button", {"border":"1","caption":"Modificar","height":"30px"}, {"onclick":"educomLivePanel2.popupLivePanelEdit"}, {
+												binding: ["wm.Binding", {}, {}, {
+													wire: ["wm.Wire", {"source":"educomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
+												}]
+											}],
+											educomDeleteButton: ["wm.Button", {"border":"1","caption":"Eliminar","height":"30px"}, {"onclick":"educomLiveForm1.deleteData"}, {
+												binding: ["wm.Binding", {}, {}, {
+													wire: ["wm.Wire", {"source":"educomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
+												}]
+											}]
+										}]
+									}]
+								}],
 								inscripciones: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/users.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Inscripciones","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"inscripcionesShow","onShow1":"inscripcionesShow1","onShow2":"inscripcionesShow2"}, {
 									inscripciones_left_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"0,3,3,3","styles":{"backgroundColor":"#fafafa"},"verticalAlign":"top","width":"250px"}, {}, {
 										panel9: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#8cdd81"},"verticalAlign":"top","width":"100%"}, {}, {
@@ -916,7 +916,8 @@ Main.widgets = {
 											}]
 										}]
 									}]
-								}]
+								}],
+								reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","showing":false,"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}]
 							}]
 						}]
 					}]
