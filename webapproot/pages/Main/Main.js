@@ -257,6 +257,7 @@ dojo.declare("Main", wm.Page, {
 	},
 	generarReporteButtClick: function(inSender) {
     	var id= main.getUserDetails.getItem(0).data.id;
+        var out = this.formato_salida.getDataValue();
         var clave= main.getUserDetails.getItem(0).data.c;    
         var formatType= "PDF";
         $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
@@ -265,14 +266,15 @@ dojo.declare("Main", wm.Page, {
             data:{ idp: id, 
                    pass: clave,
                    uri: "/aprendozreports/EXT001",
-                   format: formatType                  
+                   format: out                  
              }
         });
         inEvent.preventDefault();
 	},
 	generarReporteButt2Click: function(inSender) {
 	    var id= main.getUserDetails.getItem(0).data.id;
-        var clave= main.getUserDetails.getItem(0).data.c;    
+        var clave= main.getUserDetails.getItem(0).data.c;   
+        var out = this.formato_salida.getDataValue();
         var formatType= "PDF";
         $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
             failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
@@ -280,7 +282,7 @@ dojo.declare("Main", wm.Page, {
             data:{ idp: id, 
                    pass: clave,
                    uri: "/aprendozreports/EDU004",
-                   format: formatType                  
+                   format: out                  
              }
         });
         inEvent.preventDefault();

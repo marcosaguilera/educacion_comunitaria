@@ -931,7 +931,10 @@ Main.widgets = {
 										}]
 									}]
 								}],
-								reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","lock":true,"padding":"10","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
+								reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","padding":"10","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
+									footer_tipo_archivo: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{"backgroundColor":"#ebebeb"},"verticalAlign":"middle","width":"100%"}, {}, {
+										formato_salida: ["wm.SelectMenu", {"caption":"Formato","dataField":"dataValue","dataValue":undefined,"displayField":"dataValue","displayValue":"","height":"30px","options":"XLS, PDF","width":"250px"}, {}]
+									}],
 									label1: ["wm.Label", {"caption":"Reporte de estudiantes inscritos por Actividad y cupo máximo","height":"48px","padding":"4","styles":{"backgroundColor":"#ebebeb"},"width":"458%"}, {}],
 									generarReporteButt: ["wm.Button", {"_classes":{"domNode":["Success"]},"border":"1","borderColor":"#51a351","caption":"Generar reporte","desktopHeight":"36px","height":"36px","imageIndex":77,"imageList":"app.silkIconList","styles":{},"width":"168px"}, {"onclick":"generarReporteButtClick"}],
 									label2: ["wm.Label", {"caption":"Listado para asistencia de cursos de Educación Comunitaria","height":"48px","padding":"4","styles":{"backgroundColor":"#ebebeb"},"width":"458%"}, {}],

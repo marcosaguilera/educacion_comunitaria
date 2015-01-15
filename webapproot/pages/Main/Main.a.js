@@ -252,6 +252,7 @@ this.getUserDetails.update();
 },
 generarReporteButtClick: function(inSender) {
 var id= main.getUserDetails.getItem(0).data.id;
+var out = this.formato_salida.getDataValue();
 var clave= main.getUserDetails.getItem(0).data.c;
 var formatType= "PDF";
 $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
@@ -260,7 +261,7 @@ httpMethod: "POST",
 data:{ idp: id,
 pass: clave,
 uri: "/aprendozreports/EXT001",
-format: formatType
+format: out
 }
 });
 inEvent.preventDefault();
@@ -268,6 +269,7 @@ inEvent.preventDefault();
 generarReporteButt2Click: function(inSender) {
 var id= main.getUserDetails.getItem(0).data.id;
 var clave= main.getUserDetails.getItem(0).data.c;
+var out = this.formato_salida.getDataValue();
 var formatType= "PDF";
 $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
 failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
@@ -275,7 +277,7 @@ httpMethod: "POST",
 data:{ idp: id,
 pass: clave,
 uri: "/aprendozreports/EDU004",
-format: formatType
+format: out
 }
 });
 inEvent.preventDefault();
@@ -1223,7 +1225,10 @@ wire: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid.emptySelection","targetId
 }]
 }]
 }],
-reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","lock":true,"padding":"10","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
+reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","padding":"10","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
+footer_tipo_archivo: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{"backgroundColor":"#ebebeb"},"verticalAlign":"middle","width":"100%"}, {}, {
+formato_salida: ["wm.SelectMenu", {"caption":"Formato","dataField":"dataValue","dataValue":undefined,"displayField":"dataValue","displayValue":"","height":"30px","options":"XLS, PDF","width":"250px"}, {}]
+}],
 label1: ["wm.Label", {"caption":"Reporte de estudiantes inscritos por Actividad y cupo máximo","height":"48px","padding":"4","styles":{"backgroundColor":"#ebebeb"},"width":"458%"}, {}],
 generarReporteButt: ["wm.Button", {"_classes":{"domNode":["Success"]},"border":"1","borderColor":"#51a351","caption":"Generar reporte","desktopHeight":"36px","height":"36px","imageIndex":77,"imageList":"app.silkIconList","styles":{},"width":"168px"}, {"onclick":"generarReporteButtClick"}],
 label2: ["wm.Label", {"caption":"Listado para asistencia de cursos de Educación Comunitaria","height":"48px","padding":"4","styles":{"backgroundColor":"#ebebeb"},"width":"458%"}, {}],
