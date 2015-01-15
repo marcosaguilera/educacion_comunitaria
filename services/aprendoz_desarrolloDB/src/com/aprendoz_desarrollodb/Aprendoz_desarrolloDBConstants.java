@@ -5,7 +5,7 @@ package com.aprendoz_desarrollodb;
 
 /**
  *  Query names for service "aprendoz_desarrolloDB"
- *  08/20/2014 12:40:38
+ *  08/28/2014 09:04:48
  * 
  */
 public class Aprendoz_desarrolloDBConstants {
@@ -15,5 +15,6 @@ public class Aprendoz_desarrolloDBConstants {
     public final static String getTipoPersonaByIdQueryName = "getTipoPersonaById";
     public final static String getterOneQueryName = "getterOne";
     public final static String getterSyQueryName = "getterSy";
+    public final static String getDetailsUserQueryName = "getDetailsUser";
 
 }

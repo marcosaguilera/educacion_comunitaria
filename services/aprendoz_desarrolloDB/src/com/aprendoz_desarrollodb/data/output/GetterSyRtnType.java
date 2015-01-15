@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Generated for query "getterSy" on 08/20/2014 07:29:53
+ * Generated for query "getterSy" on 08/28/2014 09:04:43
  * 
  */
 public class GetterSyRtnType {

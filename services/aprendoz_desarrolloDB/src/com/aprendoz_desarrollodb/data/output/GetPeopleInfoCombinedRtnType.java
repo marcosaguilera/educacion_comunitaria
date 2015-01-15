@@ -4,7 +4,7 @@ package com.aprendoz_desarrollodb.data.output;
 
 
 /**
- * Generated for query "getPeopleInfoCombined" on 08/20/2014 07:29:53
+ * Generated for query "getPeopleInfoCombined" on 08/28/2014 09:04:43
  * 
  */
 public class GetPeopleInfoCombinedRtnType {

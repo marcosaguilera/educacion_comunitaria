@@ -58,4 +58,10 @@ DATE(sy.fechaHasta)
 FROM Sy sy
 WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
     </query>
+    <query name="getDetailsUser">
+        <query-param name="username" type="java.lang.String"/>
+        SELECT p.nombreLdap as u, p.idPersona as id, p.clave as c
+FROM Persona p
+WHERE p.nombreLdap=:username
+    </query>
 </hibernate-mapping>

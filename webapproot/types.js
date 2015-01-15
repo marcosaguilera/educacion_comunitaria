@@ -24183,6 +24183,43 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_desarrolloDB"
 		},
+		"com.aprendoz_desarrollodb.data.output.GetDetailsUserRtnType": {
+			"fields": {
+				"c": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"u": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_desarrolloDB"
+		},
 		"com.aprendoz_desarrollodb.data.output.GetPeopleInfoCombinedRtnType": {
 			"fields": {
 				"codigo": {
