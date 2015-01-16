@@ -24412,6 +24412,43 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_desarrolloDB"
 		},
+		"com.aprendoz_desarrollodb.data.output.GetDetailsUserRtnType": {
+			"fields": {
+				"c": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"u": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_desarrolloDB"
+		},
 		"com.aprendoz_desarrollodb.data.output.GetPeopleInfoCombinedRtnType": {
 			"fields": {
 				"codigo": {
@@ -24645,10 +24682,10 @@ dojo.declare("educacion_comunitaria", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha17", 
+	"projectSubVersion": "Alpha21", 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": "nothing", 
-	"studioVersion": "6.6.0.RELEASE", 
+	"studioVersion": "6.7.0.RELEASE", 
 	"tabletMain": "", 
 	"theme": "wm.base.widget.themes.Bootstrap", 
 	"toastPosition": "br", 
@@ -24664,4 +24701,10 @@ educacion_comunitaria.extend({
 
 	_end: 0
 });
-educacion_comunitaria.prototype._css = '';
+educacion_comunitaria.prototype._css = 'html.WMApp body .headers_data_red {\
+color: rgb(205, 85, 85);\
+font-size: large;\
+font-weight: 600;\
+background-color: #fff !important;\
+}\
+';

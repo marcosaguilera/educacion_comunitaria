@@ -1,5 +1,13 @@
 {
 	"methods": [{
+		"name": "getDetailsUser",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_desarrollodb.data.output.GetDetailsUserRtnType]"
+	}, {
 		"name": "getPeopleInfoCombined",
 		"operationType": "hqlquery",
 		"parameters": [{

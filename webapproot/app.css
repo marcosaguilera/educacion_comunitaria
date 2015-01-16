@@ -1,0 +1,8 @@
+html.WMApp body .headers_data_red {
+    color: rgb(205, 85, 85);
+    font-size: large;
+    font-weight: 600;
+    background-color: #fff !important;
+}
+
+

@@ -5,53 +5,59 @@ dojo.declare("Main", wm.Page, {
         this.getSybyDate.update();
 	},
 	"preferredDevice": "desktop",
+    
+    myCurSy: function(){
+        var sy= main.getSybyDate.getItem(0).data.idsy;
+        return sy;
+    },
 
 	costosLiveForm1BeginInsert: function(inSender) {
 	    this.gradoLookup1.setDisplayValue("EDUCACIÓN COMUNITARIA");
         this.syLookup2.setDisplayValue("2014-2015");
         this.lsTipoCosto.update();
 	},
+    
 	educomLiveForm1BeginUpdate: function(inSender) {
-        var count= main.global_ls_costos.getCount();
-        var sy= main.getSybyDate.getItem(0).data.idsy;        
+        var count= main.global_ls_costos.getCount();      
         var tipo= 2;
         console.log(count);
         if(count === 0){
            main.global_ls_costos.filter.setValue("tipoCosto", 2);
-           main.global_ls_costos.filter.setValue("sy.idSy", 5);
+           main.global_ls_costos.filter.setValue("sy.idSy", this.myCurSy());
            this.global_ls_costos.update(); 
-        }else{/*nothing to do*/}
-        main.costoslookup1.setReadonly(true);
-        main.syLookup2.setReadonly(true);	    
+        }else{/*nothing to do*/}   
+        this.costoslookup1.disable();
+        this.syLookup2.disable();
 	},
+    
 	educomLiveForm1BeginInsert: function(inSender) {
 		var count= main.global_ls_costos.getCount();
-        var sy= main.getSybyDate.getItem(0).data.idsy;
-        var tipo= 2;
+        var tipo = 2;
         console.log(count);
         if(count === 0){
-           main.global_ls_costos.filter.setValue("tipoCosto", tipo);
-           main.global_ls_costos.filter.setValue("sy.idSy", sy);
+           this.global_ls_costos.filter.setValue("tipoCosto", tipo);
+           this.global_ls_costos.filter.setValue("sy.idSy", this.myCurSy());
            this.global_ls_costos.update();  
-        }else{
-            //nothing to do
-        }
+        }else{/*nothing to do*/}
         this.profesor1Editor1.setDataValue(0);
         this.profesor2Editor1.setDataValue(0);
-        main.costoslookup1.setReadonly(false);
-        main.syLookup2.setReadonly(false);      
+        his.costoslookup1.enable();
+        this.syLookup2.enable();      
 	},
 	
 	inscripcionesShow: function(inSender) {
-		var count= main.global_ls_costos.getCount();
-        var tipo= 2;
+		var count = main.global_ls_costos.getCount();
+        var tipo = 2;
         console.log(count);
-        if(count === 0){           
-           this.global_ls_costos.update(); 
+        if(count === 0){ 
+            this.global_ls_costos.filter.setValue("tipoCosto", tipo);
+            this.global_ls_costos.filter.setValue("sy.idSy", this.myCurSy());
+            this.global_ls_costos.update(); 
         }else{
             //nothing to do
         }
-        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", this.myCurSy());
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activoRetirado", true);
         this.inscpersonaeducomLiveVariable1.update();
 	},
     // filter Persona by id into lookup in form
@@ -66,6 +72,7 @@ dojo.declare("Main", wm.Page, {
     // on beginInsert enable fechaCreacionEditor1
 	inscpersonaeducomLiveForm1BeginInsert: function(inSender) {
 		this.fechaCreacionEditor1.enable();
+        this.fechaCreacionEditor1.setDataValue(new Date().getTime());
         this.tipoPagoLookup1.setDisplayValue("Diners");
         this.descuentoEditor1.setDataValue("0");       
 	},
@@ -81,7 +88,8 @@ dojo.declare("Main", wm.Page, {
         this.inscripciones_search_people_text.clear();
         /*this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
         this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);*/
-        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", this.myCurSy());
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activoRetirado", true);
         this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
         //this.inscpersonaeducomLiveVariable1.filter.clearData();
         this.inscpersonaeducomLiveVariable1.update();
@@ -168,22 +176,21 @@ dojo.declare("Main", wm.Page, {
 	},  
     // onShow inscripciones educomLiveVariable1 will start update
 	Cursos_extracurricularesShow: function(inSender) {
-        this.educomLiveVariable1.filter.setValue("activo_retirado", true);
-        this.educomLiveVariable1.filter.setValue("sy.idSy", 5);
+        var sy = this.myCurSy();
+        this.educomLiveVariable1.filter.setValue("activoRetirado", true);
+        this.educomLiveVariable1.filter.setValue("sy.idSy", this.myCurSy());
         this.educomLiveVariable1.update();
+        this.global_ls_grados.update();
 	},
     // sometime appears a blnk space between the records in dojoGrid, maybe this script solve it!
 	educomLiveVariable1Success: function(inSender, inDeprecated) {
-		//main.educomDojoGrid.setSortIndex(2);
-	},
-    //onShow inscripciones inscpersonaeducomLiveVariable1 will start update
-	inscripcionesShow2: function(inSender) {       
-        //this.inscpersonaeducomLiveVariable1.update();
+	    var count = this.educomLiveVariable1.getCount();
+        this.cursos_totalcursos_activos.setCaption(count + " Cursos cargados" );
 	},
     //when the insert begining the list of curses will filter by the active 
 	inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
 		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
-        this.educomLiveVariable1.filter.setValue("sy.idSy", 5);
+        this.educomLiveVariable1.filter.setValue("sy.idSy", this.myCurSy());
         this.educomLiveVariable1.update();
 	},
 	inscpersonaeducomLiveForm1InsertData1: function(inSender) {
@@ -243,6 +250,50 @@ dojo.declare("Main", wm.Page, {
 	},
 	educomLiveVariable1Success1: function(inSender, inDeprecated) {
 		this.educomDojoGrid.setSortIndex(2);
+	},
+	templateUsernameVarSuccess: function(inSender, inDeprecated) {
+		var user= main.templateUsernameVar.getData().dataValue;
+        this.getUserDetails.input.setValue("username", user);
+        this.getUserDetails.update();
+	},
+	generarReporteButtClick: function(inSender) {
+    	var id= main.getUserDetails.getItem(0).data.id;
+        var out = this.formato_salida.getDataValue();
+        var clave= main.getUserDetails.getItem(0).data.c;    
+        var formatType= "PDF";
+        $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
+            failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
+            httpMethod: "POST",
+            data:{ idp: id, 
+                   pass: clave,
+                   uri: "/aprendozreports/EXT001",
+                   format: out                  
+             }
+        });
+        inEvent.preventDefault();
+	},
+	generarReporteButt2Click: function(inSender) {
+	    var id= main.getUserDetails.getItem(0).data.id;
+        var clave= main.getUserDetails.getItem(0).data.c;   
+        var out = this.formato_salida.getDataValue();
+        var formatType= "PDF";
+        $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
+            failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
+            httpMethod: "POST",
+            data:{ idp: id, 
+                   pass: clave,
+                   uri: "/aprendozreports/EDU004",
+                   format: out                  
+             }
+        });
+        inEvent.preventDefault();
+	},
+  cursos_search_cursosChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+        var searchText = this.cursos_search_cursos.getDataValue();
+        this.educomLiveVariable1.filter.setValue("costos.nombreProducto", searchText);
+        this.educomLiveVariable1.filter.setValue("activoRetirado", true);
+        this.educomLiveVariable1.filter.setValue("sy.idSy", this.myCurSy());
+        this.educomLiveVariable1.update();
 	},
 	_end: 0
 });

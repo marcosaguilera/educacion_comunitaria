@@ -3,6 +3,7 @@ package com.aprendoz_desarrollodb;
 
 import java.util.Date;
 import java.util.List;
+import com.aprendoz_desarrollodb.data.output.GetDetailsUserRtnType;
 import com.aprendoz_desarrollodb.data.output.GetPeopleInfoCombinedRtnType;
 import com.aprendoz_desarrollodb.data.output.GetterOneRtnType;
 import com.aprendoz_desarrollodb.data.output.GetterSyRtnType;
@@ -18,7 +19,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_desarrolloDB"
- *  08/20/2014 12:40:38
+ *  08/28/2014 09:04:48
  * 
  */
 @SuppressWarnings("unchecked")
@@ -57,6 +58,10 @@ public class Aprendoz_desarrolloDB
 
     public List<GetterSyRtnType> getterSy(Date f1, PagingOptions pagingOptions) {
         return ((List<GetterSyRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_desarrolloDBConstants.getterSyQueryName), f1, pagingOptions));
+    }
+
+    public List<GetDetailsUserRtnType> getDetailsUser(String username, PagingOptions pagingOptions) {
+        return ((List<GetDetailsUserRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_desarrolloDBConstants.getDetailsUserQueryName), username, pagingOptions));
     }
 
     public Object insert(Object o) {
