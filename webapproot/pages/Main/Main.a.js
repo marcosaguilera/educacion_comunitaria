@@ -41,15 +41,18 @@ his.costoslookup1.enable();
 this.syLookup2.enable();
 },
 inscripcionesShow: function(inSender) {
-var count= main.global_ls_costos.getCount();
-var tipo= 2;
+var count = main.global_ls_costos.getCount();
+var tipo = 2;
 console.log(count);
 if(count === 0){
+this.global_ls_costos.filter.setValue("tipoCosto", tipo);
+this.global_ls_costos.filter.setValue("sy.idSy", this.myCurSy());
 this.global_ls_costos.update();
 }else{
 //nothing to do
 }
-this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", this.myCurSy());
+this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activoRetirado", true);
 this.inscpersonaeducomLiveVariable1.update();
 },
 // filter Persona by id into lookup in form
@@ -64,6 +67,7 @@ this.global_ls_personas.update();
 // on beginInsert enable fechaCreacionEditor1
 inscpersonaeducomLiveForm1BeginInsert: function(inSender) {
 this.fechaCreacionEditor1.enable();
+this.fechaCreacionEditor1.setDataValue(new Date().getTime());
 this.tipoPagoLookup1.setDisplayValue("Diners");
 this.descuentoEditor1.setDataValue("0");
 },
@@ -79,7 +83,8 @@ this.inscripciones_cursos_texto.clear();
 this.inscripciones_search_people_text.clear();
 /*this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
 this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);*/
-this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", this.myCurSy());
+this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activoRetirado", true);
 this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
 //this.inscpersonaeducomLiveVariable1.filter.clearData();
 this.inscpersonaeducomLiveVariable1.update();
@@ -177,14 +182,10 @@ educomLiveVariable1Success: function(inSender, inDeprecated) {
 var count = this.educomLiveVariable1.getCount();
 this.cursos_totalcursos_activos.setCaption(count + " Cursos cargados" );
 },
-//onShow inscripciones inscpersonaeducomLiveVariable1 will start update
-inscripcionesShow2: function(inSender) {
-//this.inscpersonaeducomLiveVariable1.update();
-},
 //when the insert begining the list of curses will filter by the active
 inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
 this.educomLiveVariable1.filter.setValue("activo_retirado", true);
-this.educomLiveVariable1.filter.setValue("sy.idSy", 5);
+this.educomLiveVariable1.filter.setValue("sy.idSy", this.myCurSy());
 this.educomLiveVariable1.update();
 },
 inscpersonaeducomLiveForm1InsertData1: function(inSender) {
@@ -369,21 +370,23 @@ liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.Educom","r
 ]}, {}]
 }],
 global_ls_costos: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.Costos"}, {}, {
-liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.Costos","view":[
-{"caption":"IdCosto","sortable":true,"dataIndex":"idCosto","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
-{"caption":"Codigo","sortable":true,"dataIndex":"codigo","type":"java.lang.String","displayType":"Text","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null},
-{"caption":"NombreProducto","sortable":true,"dataIndex":"nombreProducto","type":"java.lang.String","displayType":"Text","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
-{"caption":"Descripcion","sortable":true,"dataIndex":"descripcion","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
-{"caption":"Valor","sortable":true,"dataIndex":"valor","type":"java.lang.Double","displayType":"Number","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":4,"subType":null},
-{"caption":"Nuevo","sortable":true,"dataIndex":"nuevo","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":5,"subType":null},
-{"caption":"Obligatorio","sortable":true,"dataIndex":"obligatorio","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":6,"subType":null},
-{"caption":"Positivo","sortable":true,"dataIndex":"positivo","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":7,"subType":null},
-{"caption":"Anual","sortable":true,"dataIndex":"anual","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":8,"subType":null},
-{"caption":"TipoCosto","sortable":true,"dataIndex":"tipoCosto","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":9,"subType":null}
+liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.Costos","related":["sy"],"view":[
+{"caption":"IdCosto","sortable":true,"dataIndex":"idCosto","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":13000,"subType":null,"widthUnits":"px"},
+{"caption":"Codigo","sortable":true,"dataIndex":"codigo","type":"java.lang.String","displayType":"Text","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13001,"subType":null,"widthUnits":"px"},
+{"caption":"NombreProducto","sortable":true,"dataIndex":"nombreProducto","type":"java.lang.String","displayType":"Text","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13002,"subType":null,"widthUnits":"px"},
+{"caption":"Descripcion","sortable":true,"dataIndex":"descripcion","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":13003,"subType":null,"widthUnits":"px"},
+{"caption":"Valor","sortable":true,"dataIndex":"valor","type":"java.lang.Double","displayType":"Number","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13004,"subType":null,"widthUnits":"px"},
+{"caption":"Nuevo","sortable":true,"dataIndex":"nuevo","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13005,"subType":null,"widthUnits":"px"},
+{"caption":"Obligatorio","sortable":true,"dataIndex":"obligatorio","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13006,"subType":null,"widthUnits":"px"},
+{"caption":"Positivo","sortable":true,"dataIndex":"positivo","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13007,"subType":null,"widthUnits":"px"},
+{"caption":"Anual","sortable":true,"dataIndex":"anual","type":"java.lang.Boolean","displayType":"CheckBox","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":13008,"subType":null,"widthUnits":"px"},
+{"caption":"TipoCosto","sortable":true,"dataIndex":"tipoCosto","type":"java.lang.Integer","displayType":"Number","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":13009,"subType":null,"widthUnits":"px"},
+{"caption":"IdSy","sortable":true,"dataIndex":"sy.idSy","type":"java.lang.Integer","displayType":"Number","required":true,"widthUnits":"px","includeLists":true,"includeForms":true,"order":14000},
+{"caption":"SchoolYear","sortable":true,"dataIndex":"sy.schoolYear","type":"java.lang.String","displayType":"Text","required":false,"widthUnits":"px","includeLists":true,"includeForms":true,"order":14001}
 ]}, {}]
 }],
 global_tipo_curso: ["wm.Variable", {"isList":true,"json":"[\n\t{\n\t\t\"name\": \"Cientificas y Recreativas\", \n\t\t\"dataValue\": \"ECR\"\n\t}, \n\t{\n\t\t\"name\": \"Escuelas PreDeportivas\", \n\t\t\"dataValue\": \"EPD\"\n\t}, \n\t{\n\t\t\"name\": \"Equipos de Alto Desempeño\", \n\t\t\"dataValue\": \"EAD\"\n\t},\n    {\n    \t\"name\": \"Escuelas Formación Artistica\", \n\t\t\"dataValue\": \"EFA\"\n\t},\n    {\n        \"name\": \"Centro Acuático Olga Leon de Aljure\", \n\t\t\"dataValue\": \"OLA\"\n\t}\n]","type":"EntryData"}, {}],
-inscpersonaeducomLiveVariable1: ["wm.LiveVariable", {"autoUpdate":false,"ignoreCase":true,"matchMode":"anywhere","maxResults":50,"orderBy":"asc: educom.costos.nombreProducto, desc: activoRetirado","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.InscPersonaEduCom"}, {"onSuccess":"inscpersonaeducomLiveVariable1Success"}, {
+inscpersonaeducomLiveVariable1: ["wm.LiveVariable", {"autoUpdate":false,"ignoreCase":true,"inFlightBehavior":"executeAll","matchMode":"anywhere","maxResults":50,"orderBy":"asc: educom.costos.nombreProducto, desc: activoRetirado","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.InscPersonaEduCom"}, {"onSuccess":"inscpersonaeducomLiveVariable1Success"}, {
 liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.InscPersonaEduCom","related":["educom","educom.costos","tipoPago","persona"],"view":[
 {"caption":"IdInscPersonaEduCom","sortable":true,"dataIndex":"idInscPersonaEduCom","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":8000,"subType":null,"widthUnits":"px"},
 {"caption":"FechaCreacion","sortable":true,"dataIndex":"fechaCreacion","type":"java.util.Date","displayType":"Date","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":8001,"subType":null,"widthUnits":"px"},
@@ -731,61 +734,9 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"widgetToCover"}, {}]
 }]
 }],
-Inscipciones: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","desktopHeight":"450px","height":"450px","styles":{"backgroundColor":"#e8e8e8"},"title":"Inscripciones","width":"500px"}, {}, {
-containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
-inscpersonaeducomLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"310px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"inscpersonaeducomLiveForm1BeginInsert","onBeginInsert1":"inscpersonaeducomLiveForm1BeginInsert1","onBeginUpdate":"inscpersonaeducomLiveForm1BeginUpdate","onBeginUpdate1":"inscpersonaeducomLiveForm1BeginUpdate1","onBeginUpdate2":"inscpersonaeducomLiveForm1BeginUpdate2","onBeginUpdate3":"inscpersonaeducomLiveForm1BeginUpdate3","onDeleteData":"inscpersonaeducomLiveForm1DeleteData","onInsertData":"inscpersonaeducomLiveForm1InsertData","onInsertData1":"inscpersonaeducomLiveForm1InsertData1","onSuccess":"inscpersonaeducomLivePanel1.popupLiveFormSuccess","onUpdateData":"inscpersonaeducomLiveForm1UpdateData"}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"inscpersonaeducomDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
-}],
-fechaActualizacionEditor1: ["wm.DateTime", {"caption":"FechaActualizacion","captionAlign":"right","captionSize":"140px","emptyValue":"emptyString","formField":"fechaActualizacion","height":"30px","showing":false,"width":"100%"}, {}],
-idInscPersonaEduComEditor1: ["wm.Number", {"caption":"Id","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"idInscPersonaEduCom","height":"30px","width":"100%"}, {}],
-panel6: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-fechaCreacionEditor1: ["wm.Date", {"caption":"Fecha creación","captionAlign":"right","captionSize":"140px","formField":"fechaCreacion","height":"30px","width":"100%"}, {}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
-}]
-}]
-}],
-tomaTransporteCheckbox1: ["wm.Checkbox", {"caption":"Toma transporte","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"tomaTransporte","height":"30px","width":"100%"}, {}],
-checkbox2: ["wm.Checkbox", {"caption":"Activo","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"activoRetirado","height":"30px","width":"180px"}, {}],
-checkbox3: ["wm.Checkbox", {"caption":"Beca","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"beca","height":"30px","width":"180px"}, {}],
-plazoSelect: ["wm.SelectMenu", {"caption":"Plazo","captionAlign":"right","captionSize":"140px","dataField":"dataValue","dataType":"EntryData","displayField":"name","formField":"plazo","height":"30px","width":"100%"}, {}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"lsPlazo","targetProperty":"dataSet"}, {}]
-}]
-}],
-descuentoEditor1: ["wm.Number", {"caption":"Descuento","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"descuento","height":"30px","helpText":"Si la persona tiene un descuento especial, se debe ingresar aquí con valores en pesos","placeHolder":"Ingrese el valor del descuento","required":true,"styles":{},"width":"100%"}, {}],
-tipoPagoLookup1: ["wm.Lookup", {"caption":"Tipo pago","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.TipoPago","displayField":"tipoPago","formField":"tipoPago","height":"30px","width":"100%"}, {}, {
-binding: ["wm.Binding", {}, {}, {
-dataFieldWire: ["wm.Wire", {"source":"tipoPagoLookup1.liveVariable","targetProperty":"dataSet"}, {}]
-}]
-}],
-educomLookup1: ["wm.Lookup", {"autoDataSet":false,"caption":"Curso","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.Educom","displayExpression":"${costos.nombreProducto}+\" - \"+${tipoEducom}","displayField":"costos.nombreProducto","formField":"educom","height":"30px","required":true,"width":"100%"}, {}, {
-binding: ["wm.Binding", {}, {}, {
-dataFieldWire: ["wm.Wire", {"source":"educomLookup1.liveVariable","targetProperty":"dataSet"}, {}],
-wire: ["wm.Wire", {"expression":undefined,"source":"educomLiveVariable1","targetProperty":"dataSet"}, {}]
-}]
-}],
-personaLookup1: ["wm.Lookup", {"autoDataSet":false,"caption":"Persona","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.Persona","displayExpression":"${codigo}+\" \"+${apellido1}+\" \"+${apellido2}+\" \"+${nombre1}+\" \"+${nombre2}","displayField":"idPersona","formField":"persona","height":"30px","required":true,"styles":{},"width":"100%"}, {}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"global_ls_personas","targetProperty":"dataSet"}, {}]
-}]
-}]
-}],
-insertPersonaCosto: ["wm.LiveForm", {"height":"20px","horizontalAlign":"left","verticalAlign":"top"}, {}]
-}],
-buttonBar2: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"60px"}, {}, {
-inscpersonaeducomSaveButton: ["wm.Button", {"border":"1","caption":"Guardar","height":"30px","imageIndex":0,"imageList":"app.silkIconList","width":"114px"}, {"onclick":"inscpersonaeducomLiveForm1.saveDataIfValid"}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"source":"inscpersonaeducomLiveForm1.invalid","targetId":null,"targetProperty":"disabled"}, {}]
-}]
-}],
-inscpersonaeducomCancelButton: ["wm.Button", {"border":"1","caption":"Cancelar","height":"30px","imageIndex":35,"imageList":"app.silkIconList","width":"126px"}, {"onclick":"Inscipciones.hide","onclick1":"inscpersonaeducomLiveForm1.cancelEdit"}]
-}]
-}],
 personaDialog: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar3","containerWidgetId":"containerWidget3","desktopHeight":"500px","height":"500px","title":"Registro de personas","width":"500px"}, {}, {
 containerWidget3: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
-personaLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"345px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"personaLiveForm1BeginInsert","onBeginUpdate":"personaLiveForm1BeginUpdate","onSuccess":"personaLivePanel1.popupLiveFormSuccess"}, {
+personaLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"375px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"personaLiveForm1BeginInsert","onBeginUpdate":"personaLiveForm1BeginUpdate","onSuccess":"personaLivePanel1.popupLiveFormSuccess"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"personaDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
 }],
@@ -810,6 +761,7 @@ lugarNacimientoDepartamentoEditor1: ["wm.Text", {"caption":"LugarNacimientoDepar
 nacionalidadEditor1: ["wm.Text", {"caption":"Nacionalidad","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"emptyString","formField":"nacionalidad","height":"30px","maxChars":45,"showing":false,"width":"100%"}, {}],
 direccionResidenciaEditor1: ["wm.LargeTextArea", {"caption":"DireccionResidencia","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"emptyValue":"emptyString","formField":"direccionResidencia","height":"30px","maxChars":500,"showing":false,"width":"100%"}, {}],
 telefonoEditor1: ["wm.Text", {"caption":"Telefono","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"emptyString","formField":"telefono","height":"30px","maxChars":45,"placeHolder":"télefono","width":"100%"}, {}],
+correoEditor1: ["wm.Text", {"caption":"Email","captionAlign":"right","captionSize":"140px","emptyValue":"emptyString","formField":"email","height":"30px","placeHolder":"correo","promptMessage":undefined,"width":"100%"}, {}],
 telefono2Editor1: ["wm.Text", {"caption":"No. movil","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"emptyString","formField":"telefono2","height":"30px","maxChars":45,"placeHolder":"movil","width":"100%"}, {}],
 religionEditor1: ["wm.Text", {"caption":"Religion","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"emptyString","formField":"religion","height":"30px","maxChars":45,"showing":false,"width":"100%"}, {}],
 tipoDocumentoEditor1: ["wm.SelectMenu", {"caption":"Tipo documento","captionAlign":"right","captionSize":"140px","dataField":"dataValue","dataType":"EntryData","displayField":"name","formField":"tipoDocumento","height":"30px","width":"100%"}, {}, {
@@ -875,12 +827,12 @@ wire: ["wm.Wire", {"expression":undefined,"source":"global_ls_tipopersona","targ
 }]
 }],
 buttonBar3: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"60px"}, {}, {
-personaSaveButton: ["wm.Button", {"border":"1","caption":"Guardar","height":"30px"}, {"onclick":"personaLiveForm1.saveDataIfValid"}, {
+personaSaveButton: ["wm.Button", {"border":"1","caption":"Guardar","height":"30px","imageIndex":15,"imageList":"app.silkIconList","width":"118px"}, {"onclick":"personaLiveForm1.saveDataIfValid"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"source":"personaLiveForm1.invalid","targetId":null,"targetProperty":"disabled"}, {}]
 }]
 }],
-personaCancelButton: ["wm.Button", {"border":"1","caption":"Cancelar","height":"30px"}, {"onclick":"personaDialog.hide","onclick1":"personaLiveForm1.cancelEdit"}]
+personaCancelButton: ["wm.Button", {"border":"1","caption":"Cancelar","height":"30px","imageIndex":40,"imageList":"app.silkIconList","width":"118px"}, {"onclick":"personaDialog.hide","onclick1":"personaLiveForm1.cancelEdit"}]
 }]
 }],
 loadingDialog2: ["wm.LoadingDialog", {"serviceVariableToTrack":["inscpersonaeducomLiveVariable1"]}, {}, {
@@ -896,6 +848,114 @@ wire: ["wm.Wire", {"expression":undefined,"source":"inscpersonaeducomDojoGrid","
 loadingDialog4: ["wm.LoadingDialog", {"caption":"Cargando cursos...","serviceVariableToTrack":["educomLiveVariable1"]}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"educomDojoGrid","targetProperty":"widgetToCover"}, {}]
+}]
+}],
+inscipcionesDialog1: ["wm.DesignableDialog", {"border":"1","desktopHeight":"600px","height":"600px","title":"Inscripciones en EduCom","width":"770px","containerWidgetId":"containerWidget4","buttonBarId":"buttonBar"}, {}, {
+containerWidget4: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
+inscripciones_right_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
+inscpersonaeducomLivePanel1: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"Inscipciones","targetId":null,"targetProperty":"dialog"}, {}],
+wire1: ["wm.Wire", {"source":"inscpersonaeducomLiveForm1","targetId":null,"targetProperty":"liveForm"}, {}],
+wire2: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid","targetId":null,"targetProperty":"dataGrid"}, {}],
+wire3: ["wm.Wire", {"source":"inscpersonaeducomSaveButton","targetId":null,"targetProperty":"saveButton"}, {}]
+}],
+panel8: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#8cdd81"},"verticalAlign":"middle","width":"100%"}, {}, {
+boolCheckActivo: ["wm.Checkbox", {"caption":"BoolCheckActivo","dataValue":true,"displayValue":true,"height":"30px","showing":false,"startChecked":true,"width":"130px"}, {}],
+inscripciones_cursos_texto: ["wm.Text", {"caption":undefined,"changeOnKey":true,"dataValue":undefined,"displayValue":"","height":"30px","placeHolder":"ingrese nombre del curso","styles":{},"width":"303px"}, {"onchange":"inscpersonaeducomLiveVariable1"}],
+spacer2: ["wm.Spacer", {"height":"100%","width":"100%"}, {}],
+inscripciones_clearFilter: ["wm.Button", {"_classes":{"domNode":["Success"]},"border":"1","borderColor":"#51a351","caption":"Restaurar","height":"30px","imageIndex":8,"imageList":"app.silkIconList","width":"130px"}, {"onclick":"inscripciones_clearFilterClick"}]
+}],
+inscpersonaeducomDojoGrid: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"idInscPersonaEduCom","title":" #","width":"35px","align":"center","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"fechaCreacion","title":"Fecha creación","width":"50px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"fechaActualizacion","title":"FechaActualizacion","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"descuento","title":"Dto","width":"30px","align":"center","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"educom.costos.nombreProducto","title":"Curso","width":"345px","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":true,"field":"persona.apellido1","title":"Persona","width":"280px","align":"left","formatFunc":"","editorProps":null,"expression":"${persona.apellido1}+\" \"+${persona.apellido2}+\" \"+${persona.nombre1}+\" \"+${persona.nombre2}","mobileColumn":false},
+{"show":true,"field":"tomaTransporte","title":"Trans","width":"40px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.Bool","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\" #: \" + ${idInscPersonaEduCom} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Curso: \" + ${educom.costos.nombreProducto}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Persona: \" + ${wm.runtimeId}.formatCell(\"persona.apellido1\", ${persona.apellido1}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Trans: \" + ${tomaTransporte}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activoRetirado}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Beca: \" + ${beca}\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":true,"field":"activoRetirado","title":"Activo","width":"60px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.Bool","mobileColumn":false},
+{"show":true,"field":"beca","title":"Beca","width":"30px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.Bool","mobileColumn":false},
+{"show":false,"field":"plazo","title":"Plazo","width":"56px","align":"left","formatFunc":"","formatProps":null,"editorProps":null,"mobileColumn":false},
+{"show":false,"field":"persona.apellido2","title":"Persona.apellido2","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"persona.nombre1","title":"Persona.nombre1","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"persona.nombre2","title":"Persona.nombre2","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
+],"dsType":"com.aprendoz_desarrollodb.data.InscPersonaEduCom","height":"100%","minDesktopHeight":60,"styles":{"fontSize":"10px"}}, {"onCellDblClick":"inscpersonaeducomLivePanel1.popupLivePanelEdit"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"inscpersonaeducomLiveVariable1","targetProperty":"dataSet"}, {}]
+}]
+}],
+inscpersonaeducomGridButtonPanel: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","verticalAlign":"top","width":"100%"}, {}, {
+inscpersonaeducomNewButton: ["wm.Button", {"border":"1","caption":"Nuevo","disabled":true,"height":"30px","imageIndex":1,"imageList":"app.silkIconList","styles":{}}, {"onclick":"inscpersonaeducomLivePanel1.popupLivePanelInsert"}],
+inscpersonaeducomUpdateButton: ["wm.Button", {"border":"1","caption":"Modificar","height":"30px","imageIndex":4,"imageList":"app.silkIconList","width":"120px"}, {"onclick":"inscpersonaeducomLivePanel1.popupLivePanelEdit"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
+}]
+}],
+inscpersonaeducomDeleteButton: ["wm.Button", {"border":"1","caption":"Eliminar","height":"30px","imageIndex":40,"imageList":"app.silkIconList","width":"117px"}, {"onclick":"inscpersonaeducomLiveForm1.deleteData"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
+}]
+}]
+}]
+}]
+}]
+}],
+buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"38px","height":"60px"}, {}, {
+button2: ["wm.Button", {"border":"1","caption":"Cerrar","height":"30px","imageIndex":35,"imageList":"app.silkIconList"}, {"onclick":"inscipcionesDialog1.hide"}]
+}]
+}],
+Inscipciones: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","desktopHeight":"450px","height":"450px","styles":{"backgroundColor":"#e8e8e8"},"title":"Formulario Inscripciones","width":"500px"}, {}, {
+containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
+inscpersonaeducomLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"310px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"inscpersonaeducomLiveForm1BeginInsert","onBeginInsert1":"inscpersonaeducomLiveForm1BeginInsert1","onBeginUpdate":"inscpersonaeducomLiveForm1BeginUpdate","onBeginUpdate1":"inscpersonaeducomLiveForm1BeginUpdate1","onBeginUpdate2":"inscpersonaeducomLiveForm1BeginUpdate2","onBeginUpdate3":"inscpersonaeducomLiveForm1BeginUpdate3","onDeleteData":"inscpersonaeducomLiveForm1DeleteData","onInsertData":"inscpersonaeducomLiveForm1InsertData","onInsertData1":"inscpersonaeducomLiveForm1InsertData1","onSuccess":"inscpersonaeducomLivePanel1.popupLiveFormSuccess","onUpdateData":"inscpersonaeducomLiveForm1UpdateData"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"inscpersonaeducomDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
+}],
+fechaActualizacionEditor1: ["wm.DateTime", {"caption":"FechaActualizacion","captionAlign":"right","captionSize":"140px","emptyValue":"emptyString","formField":"fechaActualizacion","height":"30px","showing":false,"width":"100%"}, {}],
+idInscPersonaEduComEditor1: ["wm.Number", {"caption":"No. Insc","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"idInscPersonaEduCom","height":"30px","width":"100%"}, {}],
+panel6: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
+fechaCreacionEditor1: ["wm.Date", {"caption":"Fecha creación","captionAlign":"right","captionSize":"140px","formField":"fechaCreacion","height":"30px","width":"100%"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"new Date().getTime()","targetProperty":"dataValue"}, {}]
+}]
+}]
+}],
+tomaTransporteCheckbox1: ["wm.Checkbox", {"caption":"Toma transporte","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"tomaTransporte","height":"30px","width":"100%"}, {}],
+checkbox2: ["wm.Checkbox", {"caption":"Activo","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"activoRetirado","height":"30px","width":"180px"}, {}],
+checkbox3: ["wm.Checkbox", {"caption":"Beca","captionAlign":"right","captionSize":"140px","displayValue":false,"formField":"beca","height":"30px","width":"180px"}, {}],
+plazoSelect: ["wm.SelectMenu", {"caption":"Plazo","captionAlign":"right","captionSize":"140px","dataField":"dataValue","dataType":"EntryData","displayField":"name","formField":"plazo","height":"30px","width":"100%"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"lsPlazo","targetProperty":"dataSet"}, {}]
+}]
+}],
+descuentoEditor1: ["wm.Number", {"caption":"Descuento","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"descuento","height":"30px","helpText":"Si la persona tiene un descuento especial, se debe ingresar aquí con valores en pesos","placeHolder":"Ingrese el valor del descuento","required":true,"styles":{},"width":"100%"}, {}],
+tipoPagoLookup1: ["wm.Lookup", {"caption":"Tipo pago","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.TipoPago","displayField":"tipoPago","formField":"tipoPago","height":"30px","width":"100%"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+dataFieldWire: ["wm.Wire", {"source":"tipoPagoLookup1.liveVariable","targetProperty":"dataSet"}, {}]
+}]
+}],
+educomLookup1: ["wm.Lookup", {"autoDataSet":false,"caption":"Curso","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.Educom","displayExpression":"${costos.nombreProducto}+\" - \"+${tipoEducom}","displayField":"costos.nombreProducto","formField":"educom","height":"30px","required":true,"width":"100%"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+dataFieldWire: ["wm.Wire", {"source":"educomLookup1.liveVariable","targetProperty":"dataSet"}, {}],
+wire: ["wm.Wire", {"expression":undefined,"source":"educomLiveVariable1","targetProperty":"dataSet"}, {}]
+}]
+}],
+personaLookup1: ["wm.Lookup", {"autoDataSet":false,"caption":"Persona","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.Persona","displayExpression":"${codigo}+\" \"+${apellido1}+\" \"+${apellido2}+\" \"+${nombre1}+\" \"+${nombre2}","displayField":"idPersona","formField":"persona","height":"30px","required":true,"styles":{},"width":"100%"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"global_ls_personas","targetProperty":"dataSet"}, {}]
+}]
+}]
+}],
+insertPersonaCosto: ["wm.LiveForm", {"height":"20px","horizontalAlign":"left","verticalAlign":"top"}, {}]
+}],
+buttonBar2: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"60px"}, {}, {
+inscpersonaeducomSaveButton: ["wm.Button", {"border":"1","caption":"Guardar","height":"30px","imageIndex":0,"imageList":"app.silkIconList","width":"114px"}, {"onclick":"inscpersonaeducomLiveForm1.saveDataIfValid"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"source":"inscpersonaeducomLiveForm1.invalid","targetId":null,"targetProperty":"disabled"}, {}]
+}]
+}],
+inscpersonaeducomCancelButton: ["wm.Button", {"border":"1","caption":"Cancelar","height":"30px","imageIndex":35,"imageList":"app.silkIconList","width":"126px"}, {"onclick":"Inscipciones.hide","onclick1":"inscpersonaeducomLiveForm1.cancelEdit"}]
 }]
 }],
 layoutBox1: ["wm.Layout", {"horizontalAlign":"left","padding":"10","styles":{},"verticalAlign":"top"}, {}, {
@@ -985,7 +1045,7 @@ wire: ["wm.Wire", {"source":"costosDojoGrid.emptySelection","targetId":null,"tar
 }]
 }]
 }],
-Cursos_extracurriculares: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/cursos.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Cursos","horizontalAlign":"left","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"Cursos_extracurricularesShow"}, {
+Cursos_extracurriculares: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/cursos.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Cursos","horizontalAlign":"left","lock":true,"styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"Cursos_extracurricularesShow"}, {
 educomLivePanel2: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"source":"educomDialog","targetId":null,"targetProperty":"dialog"}, {}],
@@ -1159,73 +1219,25 @@ wire: ["wm.Wire", {"source":"personaDojoGrid.emptySelection","targetId":null,"ta
 }]
 }]
 }],
-inscripciones: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/users.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Inscripciones","horizontalAlign":"left","layoutKind":"left-to-right","lock":true,"styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"inscripcionesShow","onShow1":"inscripcionesShow1","onShow2":"inscripcionesShow2"}, {
-inscripciones_left_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"0,3,3,3","styles":{"backgroundColor":"#fafafa"},"verticalAlign":"top","width":"250px"}, {}, {
-panel9: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#8cdd81"},"verticalAlign":"top","width":"100%"}, {}, {
-inscripciones_search_people_text: ["wm.Text", {"caption":undefined,"changeOnKey":true,"dataValue":undefined,"desktopHeight":"32px","displayValue":"","height":"32px","placeHolder":"ingrese el nombre de la persona","styles":{},"width":"100%"}, {"onchange":"inscripciones_personas_combined_sv"}]
+inscripciones: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"<img src=\"resources/images/buttons/users.png\" width=\"14px\" height=\"14px\">&nbsp;&nbsp;Inscripciones","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"inscripcionesShow","onShow1":"inscripcionesShow1","onShow2":"inscipcionesDialog1.show"}, {
+inscripciones_left_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"0,3,3,3","styles":{"backgroundColor":"#fafafa"},"verticalAlign":"top","width":"100%"}, {}, {
+panel9: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#8cdd81"},"verticalAlign":"middle","width":"100%"}, {}, {
+inscripciones_search_people_text: ["wm.Text", {"caption":undefined,"changeOnKey":true,"dataValue":undefined,"desktopHeight":"32px","displayValue":"","height":"32px","placeHolder":"ingrese el nombre de la persona","styles":{},"width":"100%"}, {"onchange":"inscripciones_personas_combined_sv"}],
+button1: ["wm.Button", {"border":"1","caption":"Inscripciones","height":"30px","imageIndex":49,"imageList":"app.silkIconList","width":"156px"}, {"onclick":"inscipcionesDialog1.show"}]
 }],
 inscripciones_list_personas: ["wm.List", {"_classes":{"domNode":["Striped","GridListStyle"]},"columns":[
 {"show":true,"field":"codigo","title":"Código","width":"60px","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"idpersona","title":"Idpersona","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"nombreCompleto","title":"Nombre completo","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Código: \" + ${codigo} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nombre completo: \" + ${nombreCompleto}\n + \"</div>\"\n\n","mobileColumn":true}
-],"height":"100%","minDesktopHeight":60,"styles":{"fontSize":"9px"}}, {"onSelect":"global_ls_personas","onSelect1":"inscripciones_list_personasSelect1","onSelect2":"inscripciones_list_personasSelect2"}, {
+],"height":"100%","minDesktopHeight":60,"styles":{"fontSize":"9px"}}, {"onSelect":"global_ls_personas","onSelect1":"inscripciones_list_personasSelect1","onSelect2":"inscripciones_list_personasSelect2","ondblclick":"inscipcionesDialog1.show"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"inscripciones_personas_combined_sv","targetProperty":"dataSet"}, {}]
 }]
 }]
-}],
-inscripciones_right_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
-inscpersonaeducomLivePanel1: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"source":"Inscipciones","targetId":null,"targetProperty":"dialog"}, {}],
-wire1: ["wm.Wire", {"source":"inscpersonaeducomLiveForm1","targetId":null,"targetProperty":"liveForm"}, {}],
-wire2: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid","targetId":null,"targetProperty":"dataGrid"}, {}],
-wire3: ["wm.Wire", {"source":"inscpersonaeducomSaveButton","targetId":null,"targetProperty":"saveButton"}, {}]
-}],
-panel8: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"backgroundColor":"#8cdd81"},"verticalAlign":"middle","width":"100%"}, {}, {
-boolCheckActivo: ["wm.Checkbox", {"caption":"BoolCheckActivo","dataValue":true,"displayValue":true,"height":"30px","showing":false,"startChecked":true,"width":"130px"}, {}],
-inscripciones_cursos_texto: ["wm.Text", {"caption":undefined,"changeOnKey":true,"dataValue":undefined,"displayValue":"","height":"30px","placeHolder":"ingrese nombre del curso","styles":{},"width":"303px"}, {"onchange":"inscpersonaeducomLiveVariable1"}],
-spacer2: ["wm.Spacer", {"height":"100%","width":"100%"}, {}],
-inscripciones_clearFilter: ["wm.Button", {"_classes":{"domNode":["Success"]},"border":"1","borderColor":"#51a351","caption":"Restaurar","height":"30px","imageIndex":8,"imageList":"app.silkIconList","width":"130px"}, {"onclick":"inscripciones_clearFilterClick"}]
-}],
-inscpersonaeducomDojoGrid: ["wm.DojoGrid", {"columns":[
-{"show":true,"field":"idInscPersonaEduCom","title":" ","width":"35px","align":"center","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"fechaCreacion","title":"Fecha creación","width":"50px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"fechaActualizacion","title":"FechaActualizacion","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
-{"show":false,"field":"descuento","title":"Dto","width":"30px","align":"center","formatFunc":"","mobileColumn":false},
-{"show":true,"field":"educom.costos.nombreProducto","title":"Curso","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
-{"show":true,"field":"persona.apellido1","title":"Persona","width":"100%","align":"left","formatFunc":"","editorProps":null,"expression":"${persona.apellido1}+\" \"+${persona.apellido2}+\" \"+${persona.nombre1}+\" \"+${persona.nombre2}","mobileColumn":false},
-{"show":true,"field":"tomaTransporte","title":"Trans","width":"40px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.Bool","mobileColumn":false},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\" : \" + ${idInscPersonaEduCom} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Curso: \" + ${educom.costos.nombreProducto}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Persona: \" + ${wm.runtimeId}.formatCell(\"persona.apellido1\", ${persona.apellido1}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Trans: \" + ${tomaTransporte}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activoRetirado}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Beca: \" + ${beca}\n + \"</div>\"\n\n","mobileColumn":true},
-{"show":true,"field":"activoRetirado","title":"Activo","width":"60px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.Bool","mobileColumn":false},
-{"show":true,"field":"beca","title":"Beca","width":"30px","align":"center","formatFunc":"","fieldType":"dojox.grid.cells.Bool","mobileColumn":false},
-{"show":false,"field":"plazo","title":"Plazo","width":"56px","align":"left","formatFunc":"","formatProps":null,"editorProps":null,"mobileColumn":false},
-{"show":false,"field":"persona.apellido2","title":"Persona.apellido2","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"persona.nombre1","title":"Persona.nombre1","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"persona.nombre2","title":"Persona.nombre2","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
-],"dsType":"com.aprendoz_desarrollodb.data.InscPersonaEduCom","height":"100%","minDesktopHeight":60,"styles":{"fontSize":"10px"}}, {"onCellDblClick":"inscpersonaeducomLivePanel1.popupLivePanelEdit"}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"inscpersonaeducomLiveVariable1","targetProperty":"dataSet"}, {}]
 }]
 }],
-inscpersonaeducomGridButtonPanel: ["wm.Panel", {"desktopHeight":"32px","enableTouchHeight":true,"height":"32px","horizontalAlign":"right","layoutKind":"left-to-right","mobileHeight":"40px","verticalAlign":"top","width":"100%"}, {}, {
-inscpersonaeducomNewButton: ["wm.Button", {"border":"1","caption":"Nuevo","disabled":true,"height":"30px","imageIndex":1,"imageList":"app.silkIconList","styles":{}}, {"onclick":"inscpersonaeducomLivePanel1.popupLivePanelInsert"}],
-inscpersonaeducomUpdateButton: ["wm.Button", {"border":"1","caption":"Modificar","height":"30px","imageIndex":4,"imageList":"app.silkIconList","width":"120px"}, {"onclick":"inscpersonaeducomLivePanel1.popupLivePanelEdit"}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
-}]
-}],
-inscpersonaeducomDeleteButton: ["wm.Button", {"border":"1","caption":"Eliminar","height":"30px","imageIndex":40,"imageList":"app.silkIconList","width":"117px"}, {"onclick":"inscpersonaeducomLiveForm1.deleteData"}, {
-binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"source":"inscpersonaeducomDojoGrid.emptySelection","targetId":null,"targetProperty":"disabled"}, {}]
-}]
-}]
-}]
-}]
-}]
-}],
-reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","padding":"10","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
+reportes: ["wm.Layer", {"border":"1","borderColor":"#ffffff","caption":"Reportes","horizontalAlign":"left","lock":true,"padding":"10","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
 footer_tipo_archivo: ["wm.Panel", {"height":"48px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{"backgroundColor":"#ebebeb"},"verticalAlign":"middle","width":"100%"}, {}, {
 formato_salida: ["wm.SelectMenu", {"caption":"Formato","dataField":"dataValue","dataValue":undefined,"displayField":"dataValue","displayValue":"","height":"30px","options":"XLS, PDF","width":"250px"}, {}]
 }],

@@ -46,15 +46,18 @@ dojo.declare("Main", wm.Page, {
 	},
 	
 	inscripcionesShow: function(inSender) {
-		var count= main.global_ls_costos.getCount();
-        var tipo= 2;
+		var count = main.global_ls_costos.getCount();
+        var tipo = 2;
         console.log(count);
-        if(count === 0){           
-           this.global_ls_costos.update(); 
+        if(count === 0){ 
+            this.global_ls_costos.filter.setValue("tipoCosto", tipo);
+            this.global_ls_costos.filter.setValue("sy.idSy", this.myCurSy());
+            this.global_ls_costos.update(); 
         }else{
             //nothing to do
         }
-        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", this.myCurSy());
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activoRetirado", true);
         this.inscpersonaeducomLiveVariable1.update();
 	},
     // filter Persona by id into lookup in form
@@ -69,6 +72,7 @@ dojo.declare("Main", wm.Page, {
     // on beginInsert enable fechaCreacionEditor1
 	inscpersonaeducomLiveForm1BeginInsert: function(inSender) {
 		this.fechaCreacionEditor1.enable();
+        this.fechaCreacionEditor1.setDataValue(new Date().getTime());
         this.tipoPagoLookup1.setDisplayValue("Diners");
         this.descuentoEditor1.setDataValue("0");       
 	},
@@ -84,7 +88,8 @@ dojo.declare("Main", wm.Page, {
         this.inscripciones_search_people_text.clear();
         /*this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activo_retirado", true);
         this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);*/
-        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", 5);
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.costos.sy.idSy", this.myCurSy());
+        this.inscpersonaeducomLiveVariable1.filter.setValue("educom.activoRetirado", true);
         this.inscpersonaeducomLiveVariable1.filter.setValue("persona.idPersona", undefined);
         //this.inscpersonaeducomLiveVariable1.filter.clearData();
         this.inscpersonaeducomLiveVariable1.update();
@@ -182,14 +187,10 @@ dojo.declare("Main", wm.Page, {
 	    var count = this.educomLiveVariable1.getCount();
         this.cursos_totalcursos_activos.setCaption(count + " Cursos cargados" );
 	},
-    //onShow inscripciones inscpersonaeducomLiveVariable1 will start update
-	inscripcionesShow2: function(inSender) {       
-        //this.inscpersonaeducomLiveVariable1.update();
-	},
     //when the insert begining the list of curses will filter by the active 
 	inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
 		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
-        this.educomLiveVariable1.filter.setValue("sy.idSy", 5);
+        this.educomLiveVariable1.filter.setValue("sy.idSy", this.myCurSy());
         this.educomLiveVariable1.update();
 	},
 	inscpersonaeducomLiveForm1InsertData1: function(inSender) {
