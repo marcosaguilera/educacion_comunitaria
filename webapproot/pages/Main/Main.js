@@ -68,6 +68,7 @@ dojo.declare("Main", wm.Page, {
          this.fechaCreacionEditor1.disable();
          main.fechaCreacionEditor1.setDataValue(date);
          this.global_ls_personas.update();
+         this.tipoPagoVar.update();
 	},
     // on beginInsert enable fechaCreacionEditor1
 	inscpersonaeducomLiveForm1BeginInsert: function(inSender) {
@@ -75,6 +76,7 @@ dojo.declare("Main", wm.Page, {
         this.fechaCreacionEditor1.setDataValue(new Date().getTime());
         this.tipoPagoLookup1.setDisplayValue("Diners");
         this.descuentoEditor1.setDataValue("0");       
+        this.tipoPagoVar.update();
 	},
     // filter personaLiveVariable
 	inscripciones_list_personasSelect1: function(inSender, inItem) {
@@ -189,7 +191,7 @@ dojo.declare("Main", wm.Page, {
 	},
     //when the insert begining the list of curses will filter by the active 
 	inscpersonaeducomLiveForm1BeginInsert1: function(inSender) {
-		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+		this.educomLiveVariable1.filter.setValue("activoRetirado", true);
         this.educomLiveVariable1.filter.setValue("sy.idSy", this.myCurSy());
         this.educomLiveVariable1.update();
 	},
@@ -242,7 +244,7 @@ dojo.declare("Main", wm.Page, {
 		this.fechaActualizacionEditor1.setDataValue(hoy);
 	},
 	inscpersonaeducomLiveForm1BeginUpdate3: function(inSender) {
-		this.educomLiveVariable1.filter.setValue("activo_retirado", true);
+		this.educomLiveVariable1.filter.setValue("activoRetirado", true);
         this.educomLiveVariable1.update();
 	},
 	inscpersonaeducomLiveVariable1Success: function(inSender, inDeprecated) {

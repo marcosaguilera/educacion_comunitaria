@@ -24682,7 +24682,7 @@ dojo.declare("educacion_comunitaria", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha21", 
+	"projectSubVersion": "Alpha27", 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": "nothing", 
 	"studioVersion": "6.7.0.RELEASE", 

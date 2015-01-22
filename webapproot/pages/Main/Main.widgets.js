@@ -295,8 +295,16 @@ Main.widgets = {
 	}],
 	global_ls_grados: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.Grado"}, {}, {
 		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.Grado","view":[
+{"caption":"Grade","sortable":true,"dataIndex":"grade","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":2,"subType":null},
+{"caption":"GradoSapiens","sortable":true,"dataIndex":"gradoSapiens","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":3,"subType":null},
 {"caption":"IdGrado","sortable":true,"dataIndex":"idGrado","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":7000,"subType":null,"widthUnits":"px"},
 {"caption":"Grado","sortable":true,"dataIndex":"grado","type":"java.lang.String","displayType":"Text","required":false,"readonly":false,"includeLists":true,"includeForms":true,"order":7001,"subType":null,"widthUnits":"px"}
+]}, {}]
+	}],
+	tipoPagoVar: ["wm.LiveVariable", {"autoUpdate":false,"inFlightBehavior":"executeLast","startUpdate":false,"type":"com.aprendoz_desarrollodb.data.TipoPago"}, {}, {
+		liveView: ["wm.LiveView", {"dataType":"com.aprendoz_desarrollodb.data.TipoPago","view":[
+{"caption":"IdTipoPago","sortable":true,"dataIndex":"idTipoPago","type":"java.lang.Integer","displayType":"Number","required":true,"readonly":true,"includeLists":true,"includeForms":true,"order":0,"subType":null},
+{"caption":"TipoPago","sortable":true,"dataIndex":"tipoPago","type":"java.lang.String","displayType":"Text","required":true,"readonly":false,"includeLists":true,"includeForms":true,"order":1,"subType":null}
 ]}, {}]
 	}],
 	costosDialog: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar","containerWidgetId":"containerWidget","desktopHeight":"520px","height":"520px","styles":{"backgroundColor":"#e8e8e8"},"title":"Costos","width":"500px"}, {}, {
@@ -555,7 +563,7 @@ Main.widgets = {
 			wire: ["wm.Wire", {"expression":undefined,"source":"educomDojoGrid","targetProperty":"widgetToCover"}, {}]
 		}]
 	}],
-	inscipcionesDialog1: ["wm.DesignableDialog", {"border":"1","desktopHeight":"600px","height":"600px","title":"Inscripciones en EduCom","width":"770px","containerWidgetId":"containerWidget4","buttonBarId":"buttonBar"}, {}, {
+	inscipcionesDialog1: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar2","containerWidgetId":"containerWidget4","desktopHeight":"600px","height":"600px","title":"Inscripciones en EduCom","width":"770px"}, {}, {
 		containerWidget4: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
 			inscripciones_right_panel: ["wm.Panel", {"height":"100%","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
 				inscpersonaeducomLivePanel1: ["wm.LivePanel", {"autoScroll":false,"horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
@@ -607,11 +615,11 @@ Main.widgets = {
 				}]
 			}]
 		}],
-		buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"38px","height":"60px"}, {}, {
+		buttonBar2: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"60px"}, {}, {
 			button2: ["wm.Button", {"border":"1","caption":"Cerrar","height":"30px","imageIndex":35,"imageList":"app.silkIconList"}, {"onclick":"inscipcionesDialog1.hide"}]
 		}]
 	}],
-	Inscipciones: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","desktopHeight":"450px","height":"450px","styles":{"backgroundColor":"#e8e8e8"},"title":"Formulario Inscripciones","width":"500px"}, {}, {
+	Inscipciones: ["wm.DesignableDialog", {"border":"1","buttonBarId":"","containerWidgetId":"containerWidget2","desktopHeight":"450px","height":"450px","styles":{"backgroundColor":"#e8e8e8"},"title":"Formulario Inscripciones","width":"500px"}, {}, {
 		containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
 			inscpersonaeducomLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"310px","horizontalAlign":"left","liveEditing":false,"margin":"4","styles":{},"verticalAlign":"top"}, {"onBeginInsert":"inscpersonaeducomLiveForm1BeginInsert","onBeginInsert1":"inscpersonaeducomLiveForm1BeginInsert1","onBeginUpdate":"inscpersonaeducomLiveForm1BeginUpdate","onBeginUpdate1":"inscpersonaeducomLiveForm1BeginUpdate1","onBeginUpdate2":"inscpersonaeducomLiveForm1BeginUpdate2","onBeginUpdate3":"inscpersonaeducomLiveForm1BeginUpdate3","onDeleteData":"inscpersonaeducomLiveForm1DeleteData","onInsertData":"inscpersonaeducomLiveForm1InsertData","onInsertData1":"inscpersonaeducomLiveForm1InsertData1","onSuccess":"inscpersonaeducomLivePanel1.popupLiveFormSuccess","onUpdateData":"inscpersonaeducomLiveForm1UpdateData"}, {
 				binding: ["wm.Binding", {}, {}, {
@@ -635,9 +643,10 @@ Main.widgets = {
 					}]
 				}],
 				descuentoEditor1: ["wm.Number", {"caption":"Descuento","captionAlign":"right","captionSize":"140px","changeOnKey":true,"emptyValue":"zero","formField":"descuento","height":"30px","helpText":"Si la persona tiene un descuento especial, se debe ingresar aquí con valores en pesos","placeHolder":"Ingrese el valor del descuento","required":true,"styles":{},"width":"100%"}, {}],
-				tipoPagoLookup1: ["wm.Lookup", {"caption":"Tipo pago","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.TipoPago","displayField":"tipoPago","formField":"tipoPago","height":"30px","width":"100%"}, {}, {
+				tipoPagoLookup1: ["wm.Lookup", {"autoDataSet":false,"caption":"Tipo pago","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.TipoPago","displayField":"tipoPago","formField":"tipoPago","height":"30px","width":"100%"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
-						dataFieldWire: ["wm.Wire", {"source":"tipoPagoLookup1.liveVariable","targetProperty":"dataSet"}, {}]
+						dataFieldWire: ["wm.Wire", {"source":"tipoPagoLookup1.liveVariable","targetProperty":"dataSet"}, {}],
+						wire: ["wm.Wire", {"expression":undefined,"source":"tipoPagoVar","targetProperty":"dataSet"}, {}]
 					}]
 				}],
 				educomLookup1: ["wm.Lookup", {"autoDataSet":false,"caption":"Curso","captionAlign":"right","captionSize":"140px","dataType":"com.aprendoz_desarrollodb.data.Educom","displayExpression":"${costos.nombreProducto}+\" - \"+${tipoEducom}","displayField":"costos.nombreProducto","formField":"educom","height":"30px","required":true,"width":"100%"}, {}, {
@@ -654,7 +663,7 @@ Main.widgets = {
 			}],
 			insertPersonaCosto: ["wm.LiveForm", {"height":"20px","horizontalAlign":"left","verticalAlign":"top"}, {}]
 		}],
-		buttonBar2: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"60px"}, {}, {
+		buttonBar4: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"60px"}, {}, {
 			inscpersonaeducomSaveButton: ["wm.Button", {"border":"1","caption":"Guardar","height":"30px","imageIndex":0,"imageList":"app.silkIconList","width":"114px"}, {"onclick":"inscpersonaeducomLiveForm1.saveDataIfValid"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"source":"inscpersonaeducomLiveForm1.invalid","targetId":null,"targetProperty":"disabled"}, {}]
